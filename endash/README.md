@@ -58,3 +58,4 @@ Copyright (c) _2023_ _Paul LeTourneau_
 - 10:30: watch video on setting up passport (https://www.youtube.com/watch?v=eDf91hihLpo)
 - 10:40: Looks like i need AuthO now? Studying their site and docs (https://manage.auth0.com/dashboard/us/dev-hrmujmh4fu04bkdm/onboarding)
 - 11:30: asking chatGPT for assistance with project before lunch
+- 1:35: issues with CORS. doing non gpt research at https://m.youtube.com/watch?v=8T8dEuUP79w&pp=ygURI2dhdGVzX29mX29seW1wdXM%3D, https://m.youtube.com/watch?v=u2vn14Xb99s, and stack overflow (multiple)
