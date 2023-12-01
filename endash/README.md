@@ -56,3 +56,4 @@ Copyright (c) _2023_ _Paul LeTourneau_
 
 - 8:00: organize and add readme and capstone proposal
 - 10:30: watch video on setting up passport (https://www.youtube.com/watch?v=eDf91hihLpo)
+- 10:40: Looks like i need AuthO now? Studying their site and docs (https://manage.auth0.com/dashboard/us/dev-hrmujmh4fu04bkdm/onboarding)
