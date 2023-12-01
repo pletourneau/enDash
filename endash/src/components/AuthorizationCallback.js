@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { exchangeAuthorizationCode } from "../api/api";
 
 const AuthorizationCallback = () => {
   console.log("Rendering AuthorizationCallback...");
 
   const location = useLocation();
+  const history = useHistory();
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -18,7 +19,7 @@ const AuthorizationCallback = () => {
     } else {
       console.error("Authorization code not found in the URL.");
     }
-  }, [location.search]);
+  }, [location.search, history]);
 
   const handleTokenExchange = async (authorizationCode) => {
     try {
@@ -29,7 +30,10 @@ const AuthorizationCallback = () => {
 
       // Handle the access token, refresh token, etc.
       console.log("Access Token Response:", tokenResponse);
+      localStorage.setItem("access_token", tokenResponse.access_token);
+      localStorage.setItem("refresh_token", tokenResponse.refresh_token);
 
+      history.push("/dashboard");
       // Now you can redirect or perform other actions based on the token response
     } catch (error) {
       console.error("Token Exchange Error:", error);

@@ -1,4 +1,4 @@
-// api.js
+//api.js
 
 import axios from "axios";
 
@@ -13,18 +13,19 @@ export const exchangeAuthorizationCode = async (authorizationCode) => {
   try {
     const response = await axios.post(
       "https://api.enphaseenergy.com/oauth/token",
+      null, // Pass null as the request body since parameters are sent in the URL
       {
-        grant_type: "authorization_code",
-        code: authorizationCode,
-        redirect_uri: redirectUri,
-      },
-      {
+        params: {
+          grant_type: "authorization_code",
+          code: authorizationCode,
+          redirect_uri: redirectUri,
+        },
         headers: {
           Authorization: authHeader,
         },
       }
     );
-    console.log("Access Token Response:", response.data);
+    console.log("Access Token Response:", response.data, response);
 
     return response.data;
   } catch (error) {
