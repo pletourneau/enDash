@@ -33,3 +33,21 @@ export const exchangeAuthorizationCode = async (authorizationCode) => {
     throw error; // Rethrow the error to handle it in the calling function
   }
 };
+
+export const fetchDataFromAPI = async (accessToken) => {
+  try {
+    const response = await axios.get(
+      "https://api.enphaseenergy.com/some-endpoint",
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching data from API:", error);
+    throw error;
+  }
+};
