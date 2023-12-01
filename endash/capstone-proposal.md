@@ -41,6 +41,8 @@
 
 <li> HTML/CSS/JS/Bootstrap</li>
 
+<li> Passport (for OAuth 2.0)</li>
+
 </ul>
 
 ### Project Planning Tools
@@ -61,6 +63,8 @@
 
 <li> Additional user interviews before next iterations </li>
 
+<li> Add 3d animations (subtle) for styling </li>
+
 <li> A way for the user to create a "brag" post on social media with installer branding. Possibly with referral links embedded </li>
 
 <li> Embedded weather forecast through API</li>
@@ -74,6 +78,8 @@
 ## What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
 
 <ul>
+
+<li> Three.js for 3D animations </li>
 
 <li> External Weather API (unsure yet which one) </li>
 

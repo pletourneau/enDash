@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(
   session({
-    secret: process.env.clientSecret;
+    secret: process.env.clientSecret,
     resave: true,
     saveUninitialized: true,
   })
@@ -58,7 +58,7 @@ app.get(
 
       // Call the function to exchange authorization code for access token
       const tokenResponse = await exchangeAuthorizationCode(authorizationCode);
-      req.session.accessToken = tokenResponse.access_token;
+
       // Handle tokenResponse as needed (store tokens, etc.)
       res.redirect("/"); // Redirect to the home page or another suitable destination
     } catch (error) {
@@ -67,7 +67,6 @@ app.get(
     }
   }
 );
-
 
 app.get("/logout", (req, res) => {
   // Use the req.logout() function provided by Passport to log the user out

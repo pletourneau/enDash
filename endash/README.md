@@ -55,3 +55,4 @@ Copyright (c) _2023_ _Paul LeTourneau_
 #### Friday, 12/01
 
 - 8:00: organize and add readme and capstone proposal
+- 10:30: watch video on setting up passport (https://www.youtube.com/watch?v=eDf91hihLpo)
