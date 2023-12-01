@@ -3,7 +3,7 @@
 import axios from "axios";
 
 export const exchangeAuthorizationCode = async (authorizationCode) => {
-  console.log("Exchanging authorization code:", authorizationCode);
+  console.log("api.js Exchanging authorization code:", authorizationCode);
   const clientId = process.env.clientId;
   const clientSecret = process.env.clientSecret;
   const redirectUri = process.env.redirectUri;
@@ -25,11 +25,11 @@ export const exchangeAuthorizationCode = async (authorizationCode) => {
         },
       }
     );
-    console.log("Access Token Response:", response.data, response);
+    console.log("api.js Access Token Response:", response.data, response);
 
     return response.data;
   } catch (error) {
-    console.error("Access Token Request Error:", error);
+    console.error("api.js Access Token Request Error:", error);
     throw error; // Rethrow the error to handle it in the calling function
   }
 };
