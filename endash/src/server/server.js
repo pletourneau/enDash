@@ -10,8 +10,7 @@ app.use(express.json());
 // New route handler for /start-oauth-flow
 app.get("/start-oauth-flow", (req, res) => {
   // Enphase Energy's authorization URL
-  const authorizationUrl =
-    "https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=your_client_id";
+  const authorizationUrl = `https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=${clientId}`;
   // OAuth parameters
   const clientId = process.env.clientId;
   const redirectUri = process.env.redirectUri;
