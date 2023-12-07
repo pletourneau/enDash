@@ -63,3 +63,5 @@ Copyright (c) _2023_ _Paul LeTourneau_
 #### Thursday, 12/07 (Confirmed with Cameron that we could work on project after applying for jobs)
 
 - 2:30 looking over quick start guide again. https://developer-v4.enphase.com/docs/quickstart.html and watching youtube about exchanging oauth tokens https://www.youtube.com/watch?v=996OiexHze0
+
+- 3:50 trying to troubleshoot environmental variables. I am now getting 403 errors in return. Something is amiss.

@@ -9,6 +9,7 @@ const Login = () => {
     const redirectUri = process.env.REACT_APP_REDIRECT_URI;
 
     const authorizationUrl = `https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`;
+
     window.location.href = authorizationUrl;
   };
 
