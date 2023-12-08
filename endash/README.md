@@ -69,6 +69,17 @@ Copyright (c) _2023_ _Paul LeTourneau_
 
 - 4:50 WIP 3. Auth URL
 
+#### Thursday, 12/07
+
+- 9:00am testing out queries in postman. got this to work around 940 to grant a token. still not working in app
+  curl --location 'https://api.enphaseenergy.com/oauth/token' \
+  --header 'Authorization: Basic MTkyZWY0YzJiMmY2NWFlMGU2N2ViOTNlYjQwMmU0MzA6ZDJhNzM5NjRhMTg5NjhkM2I2MWZjNzA0Yjg5YWQzMmY==' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --header 'Cookie: SESSION=dfd660ba-e931-4168-8382-d6318abb6a91' \
+  --data-urlencode 'grant_type=authorization_code' \
+  --data-urlencode 'code=QboYec' \
+  --data-urlencode 'redirect_uri=https://api.enphaseenergy.com/oauth/redirect_uri'
+
 ```
 To start making API requests, the application must be authorized by the system owner. The Auth URL must be sent to the system owner via email or must be embedded in the HO App created by the developer. For the above app, Auth URL is https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=f2a479f3c6067f0d9517cadae7f00b47
 
