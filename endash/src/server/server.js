@@ -25,8 +25,14 @@ app.post("/oauth/token", async (req, res) => {
     params.append("code", code);
     params.append("redirect_uri", redirectUri);
 
-    const authHeader = `Basic ${process.env.REACT_APP_BASE_64}`;
-
+    const authHeader =
+      "Basic MTkyZWY0YzJiMmY2NWFlMGU2N2ViOTNlYjQwMmU0MzA6ZDJhNzM5NjRhMTg5NjhkM2I2MWZjNzA0Yjg5YWQzMmY==";
+    // const authHeader = `Basic ${process.env.REACT_APP_BASE_64}`;
+    // console.log(
+    //   "Base64 from environment variable:",
+    //   process.env.REACT_APP_BASE_64
+    // );
+    console.log("Authorization Header:", authHeader);
     const response = await axios.post(
       "https://api.enphaseenergy.com/oauth/token",
       params.toString(),
@@ -38,11 +44,11 @@ app.post("/oauth/token", async (req, res) => {
       }
     );
 
-    console.log("Token Exchange Response:", response.data);
+    // console.log("Token Exchange Response:", response.data);
 
     res.json(response.data);
   } catch (error) {
-    console.error("Error exchanging authorization code:", error);
+    // console.error("Error exchanging authorization code:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
