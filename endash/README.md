@@ -65,3 +65,15 @@ Copyright (c) _2023_ _Paul LeTourneau_
 - 2:30 looking over quick start guide again. https://developer-v4.enphase.com/docs/quickstart.html and watching youtube about exchanging oauth tokens https://www.youtube.com/watch?v=996OiexHze0
 
 - 3:50 trying to troubleshoot environmental variables. I am now getting 403 errors in return. Something is amiss.
+
+- 4:50 WIP 3. Auth URL
+
+```
+To start making API requests, the application must be authorized by the system owner. The Auth URL must be sent to the system owner via email or must be embedded in the HO App created by the developer. For the above app, Auth URL is https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=f2a479f3c6067f0d9517cadae7f00b47
+
+4. Append Auth URL with redirect_uri
+
+The Auth URL must be appended with redirect_uri as a query parameter and after HO approves, the authorization code is sent to this redirect_uri as a query parameter. You can provide your own Web API or webhook URL in the redirect_uri or you can use https://api.enphaseenergy.com/oauth/redirect_uri as a default redirect_uri.
+
+If the default redirect uri is used, the final Auth URL must be similar to For the above app, Auth URL is https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=f2a479f3c6067f0d9517cadae7f00b47&redirect_uri=https://api.enphaseenergy.com/oauth/redirect_uri
+```
