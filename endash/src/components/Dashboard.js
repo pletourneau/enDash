@@ -10,7 +10,12 @@ const Dashboard = () => {
       try {
         const authorizationCode = localStorage.getItem("access_token");
         const response = await axios.get(
-          `http://localhost:3001/api/system-summary?code=${authorizationCode}`
+          `http://localhost:3001/api/system-summary`,
+          {
+            params: {
+              code: authorizationCode,
+            },
+          }
         );
         console.log(response.data);
         setData(response.data);
