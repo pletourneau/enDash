@@ -1,6 +1,11 @@
 import axios from "axios";
 
 export const exchangeAuthorizationCode = async (authorizationCode) => {
+  console.log(
+    "Received Authorization Code in exchangeAuthorizationCode:",
+    authorizationCode
+  );
+
   const clientId = process.env.REACT_APP_CLIENT_ID;
   const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
   const redirectUri = process.env.REACT_APP_REDIRECT_URI;
@@ -9,7 +14,7 @@ export const exchangeAuthorizationCode = async (authorizationCode) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:3001/oauth/token", // Change this to your server endpoint
+      "http://localhost:3001/oauth/token",
       null,
       {
         params: {
@@ -22,6 +27,7 @@ export const exchangeAuthorizationCode = async (authorizationCode) => {
         },
       }
     );
+
     console.log("api.js Access Token Response:", response.data);
 
     return response.data;

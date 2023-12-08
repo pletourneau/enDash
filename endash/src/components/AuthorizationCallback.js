@@ -1,27 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { exchangeAuthorizationCode } from "../api/api";
 
 const AuthorizationCallback = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [authorizationCode, setAuthorizationCode] = useState("");
-
-  // useEffect(() => {
-  //   const searchParams = new URLSearchParams(location.search);
-  //   const codeFromURL = searchParams.get("code");
-
-  //   if (codeFromURL) {
-  //     // If code is present in the URL, set it in the state
-  //     setAuthorizationCode(codeFromURL);
-  //   }
-  // }, [location.search]);
 
   const handleCodeInputChange = (e) => {
     setAuthorizationCode(e.target.value);
   };
 
   const handleTokenExchange = () => {
+    console.log("Authorization Code before exchange:", authorizationCode);
     if (authorizationCode) {
       exchangeAuthorizationCode(authorizationCode)
         .then((accessToken) => {
