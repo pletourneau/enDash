@@ -2,7 +2,7 @@
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
-require("dotenv").config();
+// require("dotenv").config();
 
 const app = express();
 const port = 3001;
@@ -25,9 +25,8 @@ app.post("/oauth/token", async (req, res) => {
     params.append("code", code);
     params.append("redirect_uri", redirectUri);
 
-    const authHeader =
-      "Basic MTkyZWY0YzJiMmY2NWFlMGU2N2ViOTNlYjQwMmU0MzA6ZDJhNzM5NjRhMTg5NjhkM2I2MWZjNzA0Yjg5YWQzMmY==";
-    // const authHeader = `Basic ${process.env.REACT_APP_BASE_64}`;
+    const authHeader = base64;
+    console.log(base64);
     // console.log(
     //   "Base64 from environment variable:",
     //   process.env.REACT_APP_BASE_64
