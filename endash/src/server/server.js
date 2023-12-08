@@ -14,8 +14,9 @@ app.post("/oauth/token", async (req, res) => {
   const { code } = req.body;
   console.log("Authorization Code:", code);
 
-  const clientId = process.env.REACT_APP_CLIENT_ID;
-  const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
+  // const clientId = process.env.REACT_APP_CLIENT_ID;
+  // const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
+  const base64 = process.env.REACT_APP_BASE_64;
   // const redirectUri = process.env.REACT_APP_REDIRECT_URI;
   const redirectUri = "https://api.enphaseenergy.com/oauth/redirect_uri";
   try {
@@ -24,9 +25,7 @@ app.post("/oauth/token", async (req, res) => {
     params.append("code", code);
     params.append("redirect_uri", redirectUri);
 
-    const authHeader = `Basic ${Buffer.from(
-      `${clientId}:${clientSecret}`
-    ).toString("base64")}`;
+    const authHeader = `Basic ${process.env.REACT_APP_BASE_64}`;
 
     const response = await axios.post(
       "https://api.enphaseenergy.com/oauth/token",

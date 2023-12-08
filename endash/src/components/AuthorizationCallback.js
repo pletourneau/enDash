@@ -1,7 +1,7 @@
 // AuthorizationCallback.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { exchangeAuthorizationCode } from "../api/api";
+import axios from "axios";
 
 const AuthorizationCallback = () => {
   const navigate = useNavigate();
@@ -14,8 +14,11 @@ const AuthorizationCallback = () => {
   const handleTokenExchange = () => {
     console.log("Authorization Code before exchange:", authorizationCode);
     if (authorizationCode) {
-      exchangeAuthorizationCode(authorizationCode)
-        .then((accessToken) => {
+      // Make a request to your server to initiate token exchange
+      axios
+        .post("http://localhost:3001/oauth/token", { code: authorizationCode })
+        .then((response) => {
+          const accessToken = response.data.access_token;
           console.log("Access token received:", accessToken);
           // Store the access token as needed (e.g., in localStorage)
           localStorage.setItem("access_token", accessToken);
