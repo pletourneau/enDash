@@ -17,7 +17,7 @@ app.get("/start-oauth-flow", (req, res) => {
   const responseType = "code";
 
   // Redirect the user to Enphase Energy's authorization URL
-  const redirectUrl = `${authorizationUrl}?client_id=${clientId}&response_type=${responseType}&redirect_uri=${redirectUri}`;
+  const redirectUrl = `${authorizationUrl}&response_type=${responseType}&redirect_uri=${redirectUri}`;
   res.redirect(redirectUrl);
 });
 
