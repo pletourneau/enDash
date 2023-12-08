@@ -1,3 +1,4 @@
+// server.js
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
@@ -15,8 +16,8 @@ app.post("/oauth/token", async (req, res) => {
 
   const clientId = process.env.REACT_APP_CLIENT_ID;
   const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
-  const redirectUri = process.env.REACT_APP_REDIRECT_URI;
-
+  // const redirectUri = process.env.REACT_APP_REDIRECT_URI;
+  const redirectUri = "https://api.enphaseenergy.com/oauth/redirect_uri";
   try {
     const params = new URLSearchParams();
     params.append("grant_type", "authorization_code");
@@ -29,7 +30,7 @@ app.post("/oauth/token", async (req, res) => {
 
     const response = await axios.post(
       "https://api.enphaseenergy.com/oauth/token",
-      params.toString(), // Use toString() to get the URL-encoded string
+      params.toString(),
       {
         headers: {
           Authorization: authHeader,

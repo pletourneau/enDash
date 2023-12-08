@@ -1,3 +1,4 @@
+// AuthorizationCallback.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { exchangeAuthorizationCode } from "../api/api";
