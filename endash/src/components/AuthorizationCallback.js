@@ -20,7 +20,6 @@ const AuthorizationCallback = () => {
         .then((response) => {
           const accessToken = response.data.access_token;
           console.log("Access token received:", accessToken);
-          // Store the access token as needed (e.g., in localStorage)
           localStorage.setItem("access_token", accessToken);
 
           // Redirect to the dashboard or any other route
