@@ -7,15 +7,15 @@ const AuthorizationCallback = () => {
   const navigate = useNavigate();
   const [authorizationCode, setAuthorizationCode] = useState("");
 
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const codeFromURL = searchParams.get("code");
+  // useEffect(() => {
+  //   const searchParams = new URLSearchParams(location.search);
+  //   const codeFromURL = searchParams.get("code");
 
-    if (codeFromURL) {
-      // If code is present in the URL, set it in the state
-      setAuthorizationCode(codeFromURL);
-    }
-  }, [location.search]);
+  //   if (codeFromURL) {
+  //     // If code is present in the URL, set it in the state
+  //     setAuthorizationCode(codeFromURL);
+  //   }
+  // }, [location.search]);
 
   const handleCodeInputChange = (e) => {
     setAuthorizationCode(e.target.value);
