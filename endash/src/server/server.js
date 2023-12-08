@@ -1,23 +1,23 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
 const port = 3001;
 
 app.use(express.json());
-
+app.use(cors());
 // New route handler for /start-oauth-flow
 app.get("/start-oauth-flow", (req, res) => {
   // Enphase Energy's authorization URL
+  const clientId = process.env.REACT_APP_CLIENT_ID;
   const authorizationUrl = `https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=${clientId}`;
   // OAuth parameters
-  const clientId = process.env.clientId;
-  const redirectUri = process.env.redirectUri;
-  const responseType = "code";
+  const redirectUri = process.env.REACT_APP_REDIRECT_URI;
 
   // Redirect the user to Enphase Energy's authorization URL
-  const redirectUrl = `${authorizationUrl}&response_type=${responseType}&redirect_uri=${redirectUri}`;
+  const redirectUrl = `${authorizationUrl}&response_type=code&redirect_uri=${redirectUri}`;
   res.redirect(redirectUrl);
 });
 
@@ -25,9 +25,9 @@ app.get("/start-oauth-flow", (req, res) => {
 app.post("/oauth/token", async (req, res) => {
   const { code } = req.body;
 
-  const clientId = process.env.clientId;
-  const clientSecret = process.env.clientSecret;
-  const redirectUri = process.env.redirectUri;
+  const clientId = process.env.REACT_APP_CLIENT_ID;
+  const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
+  const redirectUri = process.env.REACT_APP_REDIRECT_URI;
 
   try {
     const response = await axios.post(

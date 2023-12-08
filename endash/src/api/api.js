@@ -1,19 +1,16 @@
-//api.js
-
 import axios from "axios";
 
 export const exchangeAuthorizationCode = async (authorizationCode) => {
-  console.log("api.js Exchanging authorization code:", authorizationCode);
-  const clientId = process.env.clientId;
-  const clientSecret = process.env.clientSecret;
-  const redirectUri = process.env.redirectUri;
+  const clientId = process.env.REACT_APP_CLIENT_ID;
+  const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
+  const redirectUri = process.env.REACT_APP_REDIRECT_URI;
 
   const authHeader = `Basic ${btoa(`${clientId}:${clientSecret}`)}`;
 
   try {
     const response = await axios.post(
-      "https://api.enphaseenergy.com/oauth/token",
-      null, // Pass null as the request body since parameters are sent in the URL
+      "http://localhost:3001/oauth/token", // Change this to your server endpoint
+      null,
       {
         params: {
           grant_type: "authorization_code",
@@ -25,12 +22,12 @@ export const exchangeAuthorizationCode = async (authorizationCode) => {
         },
       }
     );
-    console.log("api.js Access Token Response:", response.data, response);
+    console.log("api.js Access Token Response:", response.data);
 
     return response.data;
   } catch (error) {
     console.error("api.js Access Token Request Error:", error);
-    throw error; // Rethrow the error to handle it in the calling function
+    throw error;
   }
 };
 

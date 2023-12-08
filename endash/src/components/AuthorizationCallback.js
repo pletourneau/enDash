@@ -1,21 +1,28 @@
-// components/AuthorizationCallback.js
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { exchangeAuthorizationCode } from "../api/api";
 
 const AuthorizationCallback = () => {
-  console.log("Rendering AuthorizationCallback...");
-
   const location = useLocation();
   const navigate = useNavigate();
+  const [authorizationCode, setAuthorizationCode] = useState("");
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
-    const authorizationCode = searchParams.get("code");
-    console.log(authorizationCode);
+    const codeFromURL = searchParams.get("code");
 
+    if (codeFromURL) {
+      // If code is present in the URL, set it in the state
+      setAuthorizationCode(codeFromURL);
+    }
+  }, [location.search]);
+
+  const handleCodeInputChange = (e) => {
+    setAuthorizationCode(e.target.value);
+  };
+
+  const handleTokenExchange = () => {
     if (authorizationCode) {
-      console.log("Authorization code found:", authorizationCode);
       exchangeAuthorizationCode(authorizationCode)
         .then((accessToken) => {
           console.log("Access token received:", accessToken);
@@ -30,11 +37,26 @@ const AuthorizationCallback = () => {
           // Handle the error
         });
     } else {
-      console.error("Authorization code not found in the URL.");
+      console.error("Authorization code is empty.");
     }
-  }, [location.search, navigate]);
+  };
 
-  return <div>Handling OAuth Callback...</div>;
+  return (
+    <div>
+      <h2>Authorization Callback</h2>
+      <div>
+        <label>
+          Enter Authorization Code:
+          <input
+            type="text"
+            value={authorizationCode}
+            onChange={handleCodeInputChange}
+          />
+        </label>
+      </div>
+      <button onClick={handleTokenExchange}>Exchange Authorization Code</button>
+    </div>
+  );
 };
 
 export default AuthorizationCallback;
