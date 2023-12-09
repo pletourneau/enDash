@@ -18,6 +18,7 @@ const Dashboard = () => {
           }
         );
         console.log(response.data);
+        console.log(data);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching summary data:", error);
