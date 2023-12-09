@@ -37,7 +37,7 @@ app.post("/oauth/token", async (req, res) => {
         },
       }
     );
-
+    console.log(response);
     const accessToken = response.data.access_token;
 
     tokenStore[code] = accessToken;
