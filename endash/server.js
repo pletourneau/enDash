@@ -1,4 +1,3 @@
-// server.js
 require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
@@ -40,8 +39,8 @@ app.post("/oauth/token", async (req, res) => {
     console.log(response);
     const accessToken = response.data.access_token;
 
-    tokenStore[code] = accessToken;
-    console.log(accessToken);
+    // Use accessToken as the key for better clarity
+    tokenStore[accessToken] = code;
     res.json(response.data);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
@@ -51,21 +50,22 @@ app.post("/oauth/token", async (req, res) => {
 app.get("/api/system-summary", async (req, res) => {
   try {
     const systemId = process.env.REACT_APP_SYSTEMID;
-    const code = req.query.code;
+    const accessToken = req.query.code; // Rename code to accessToken for consistency
 
-    if (!code) {
-      throw new Error("Authorization code not provided");
+    console.log("Token Store:", tokenStore);
+    if (!accessToken) {
+      throw new Error("Access token not provided");
     }
 
-    const accessToken = tokenStore[code];
-    console.log(accessToken);
+    const storedCode = tokenStore[accessToken];
+    console.log("Authorization code retrieved from tokenStore:", storedCode);
 
-    if (!accessToken) {
-      throw new Error("Access token not found");
+    if (!storedCode) {
+      throw new Error("Authorization code not found");
     }
 
     const response = await axios.get(
-      `https://api.enphaseenergy.com/api/V4/systems/${systemId}/summary`,
+      `https://api.enphaseenergy.com/api/V4/systems/?key=${systemId}`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,

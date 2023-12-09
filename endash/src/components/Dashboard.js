@@ -8,12 +8,12 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const authorizationCode = localStorage.getItem("access_token");
+        const accessToken = localStorage.getItem("access_token");
         const response = await axios.get(
           `http://localhost:3001/api/system-summary`,
           {
             params: {
-              code: authorizationCode,
+              code: accessToken,
             },
           }
         );

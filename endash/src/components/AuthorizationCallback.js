@@ -11,24 +11,26 @@ const AuthorizationCallback = () => {
     setAuthorizationCode(e.target.value);
   };
 
-  const handleTokenExchange = () => {
+  const handleTokenExchange = async () => {
     console.log("Authorization Code before exchange:", authorizationCode);
-    if (authorizationCode) {
-      // Make a request to your server to initiate token exchange
-      axios
-        .post("http://localhost:3001/oauth/token", { code: authorizationCode })
-        .then((response) => {
-          const accessToken = response.data.access_token;
-          console.log("Access token received:", accessToken);
-          localStorage.setItem("access_token", accessToken);
 
-          // Redirect to the dashboard or any other route
-          navigate("/dashboard");
-        })
-        .catch((error) => {
-          console.error("Error exchanging authorization code:", error);
-          // Handle the error
+    if (authorizationCode) {
+      try {
+        const response = await axios.post("http://localhost:3001/oauth/token", {
+          code: authorizationCode,
         });
+        const accessToken = response.data.access_token;
+
+        console.log("Access token received:", accessToken);
+
+        localStorage.setItem("access_token", accessToken);
+
+        // Redirect to the dashboard or any other route
+        navigate("/dashboard");
+      } catch (error) {
+        console.error("Error exchanging authorization code:", error);
+        // Handle the error
+      }
     } else {
       console.error("Authorization code is empty.");
     }
