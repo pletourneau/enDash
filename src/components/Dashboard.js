@@ -9,6 +9,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const accessToken = localStorage.getItem("access_token");
+        console.log(accessToken);
         const response = await axios.get(
           `http://localhost:3001/api/system-summary`,
           {
@@ -19,6 +20,7 @@ const Dashboard = () => {
         );
         console.log(response.data);
         console.log(data);
+        console.log(accessToken);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching summary data:", error);

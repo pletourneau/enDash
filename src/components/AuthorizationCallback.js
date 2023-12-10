@@ -21,7 +21,7 @@ const AuthorizationCallback = () => {
         });
         const accessToken = response.data.access_token;
 
-        console.log("Access token received:", accessToken);
+        // console.log("Access token received:", accessToken);
 
         localStorage.setItem("access_token", accessToken);
 
