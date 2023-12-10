@@ -3,3 +3,13 @@ comm message
 moved out of parent folder to proper struct
 
 12-9 was able to get postman query to work. confirmed system id. confirmed access token. refresh token is in response to post request. confirm what the query is for next step.
+
+API RESPONSE FORMAT
+
+`https://api.enphaseenergy.com/api/v4/systems/${sysId}/?key=${key}`, 
+
+{"system_id":2739773,"name":"Marina Shortino","public_name":"Residential System","timezone":"US/Eastern","address":{"city":"Coventry","state":"RI","country":"US","postal_code":"02831"},"connection_type":"cellular","status":"normal","last_report_at":1702250715,"last_energy_at":1702241244,"operational_at":1651601896,"attachment_type":null,"interconnect_date":null,"energy_lifetime":-1,"energy_today":-1,"system_size":-1,"other_references":["RTP1984"]}
+
+
+`https://api.enphaseenergy.com/api/v4/systems/${sysId}/summary?key=${key}`,
+{"system_id":2739773,"current_power":1,"energy_lifetime":19660702,"energy_today":4742,"last_interval_end_at":1702241244,"last_report_at":1702250715,"modules":36,"operational_at":1651601896,"size_w":10440,"source":"microinverters","status":"normal","summary_date":"2023-12-10"}

@@ -58,8 +58,13 @@ app.get("/api/system-summary", async (req, res) => {
     }
 
     const response = await axios.get(
-      // `https://api.enphaseenergy.com/api/V4/systems/${sysId}/energy_lifetime/?key=${key}`,
+      // `https://api.enphaseenergy.com/api/v4/systems/${sysId}/?key=${key}`, functional
+
+      // `https://api.enphaseenergy.com//api/v4/systems/${sys_id}/telemetry/production_micro/?key=${key}`, NOT FUNCTIONAL
+
       `https://api.enphaseenergy.com/api/v4/systems/${sysId}/summary?key=${key}`,
+      // functional summary above. the other endpoints arent useful or dont function.
+
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
