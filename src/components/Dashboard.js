@@ -10,6 +10,8 @@ const Dashboard = () => {
       try {
         const accessToken = localStorage.getItem("access_token");
         console.log(accessToken);
+        const key = process.env.REACT_APP_API_KEY;
+        const sysId = process.env.REACT_APP_SYSTEMID;
         const response = await axios.get(
           `http://localhost:3001/api/system-summary`,
           {
@@ -18,9 +20,11 @@ const Dashboard = () => {
             },
           }
         );
-        console.log(response.data);
-        console.log(data);
-        console.log(accessToken);
+
+        console.log("Enphase API Response Status:", response.status);
+        console.log("Enphase API Response Headers:", response.headers);
+        console.log("Enphase API Response Data:", response.data);
+
         setData(response.data);
       } catch (error) {
         console.error("Error fetching summary data:", error);

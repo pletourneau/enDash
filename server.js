@@ -48,6 +48,8 @@ app.get("/api/system-summary", async (req, res) => {
   try {
     const key = process.env.REACT_APP_API_KEY;
     const sysId = process.env.REACT_APP_SYSTEMID;
+    console.log(key);
+    console.log(sysId);
     const accessToken = req.query.code;
     const storedCode = tokenStore[accessToken];
     // console.log(accessToken); //verified this is correct
@@ -56,7 +58,8 @@ app.get("/api/system-summary", async (req, res) => {
     }
 
     const response = await axios.get(
-      `https://api.enphaseenergy.com/api/V4/systems/${sysId}/energy_lifetime/?key=${key}`,
+      // `https://api.enphaseenergy.com/api/V4/systems/${sysId}/energy_lifetime/?key=${key}`,
+      `https://api.enphaseenergy.com/api/v4/systems/${sysId}/summary?key=${key}`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
