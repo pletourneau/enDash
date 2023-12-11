@@ -14,6 +14,7 @@ const Dashboard = () => {
         // const sysId = process.env.REACT_APP_SYSTEMID; remnants of when i tried to make API reqs on client side
         const response = await axios.get(
           `http://localhost:3001/api/system-summary`,
+
           {
             params: {
               code: accessToken,
