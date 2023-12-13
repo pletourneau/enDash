@@ -30,7 +30,7 @@ app.get("/oauth/redirect", async (req, res) => {
         {
           grant_type: "authorization_code",
           code: authCode,
-          redirect_uri: "http://localhost:3001/oauth/redirect",
+          redirect_uri: redirectUri,
         },
         {
           headers: {

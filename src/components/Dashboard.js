@@ -14,7 +14,7 @@ const Dashboard = () => {
         const now = Math.floor(Date.now() / 1000);
         console.log(now);
         const response = await axios.get(
-          `http://localhost:3001/api/system-summary`,
+          "https://endash-11c45.firebaseapp.com/api/system-summary",
           {
             params: {
               code: accessToken,
