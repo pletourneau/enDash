@@ -11,55 +11,54 @@ const tokenStore = {};
 app.use(express.json());
 app.use(cors());
 
-app.post("/oauth/token", async (req, res) => {
-  const { code } = req.body;
-  const base64 = process.env.REACT_APP_BASE_64;
-  const redirectUri = "https://api.enphaseenergy.com/oauth/redirect_uri";
-
-  try {
-    const params = new URLSearchParams();
-    params.append("grant_type", "authorization_code");
-    params.append("code", code);
-    params.append("redirect_uri", redirectUri);
-
-    const authHeader = `Basic ${base64}`;
-
-    const response = await axios.post(
-      "https://api.enphaseenergy.com/oauth/token",
-      params.toString(),
-      {
-        headers: {
-          Authorization: authHeader,
-          "Content-Type": "application/x-www-form-urlencoded",
+// OAuth Redirect endpoint
+app.get("/oauth/redirect", async (req, res) => {
+  const authCode = req.query.code;
+  const redirectUri = process.env.REACT_APP_REDIRECT_URI;
+  if (authCode) {
+    try {
+      // Exchange the authorization code for an access token
+      const response = await axios.post(
+        "https://api.enphaseenergy.com/oauth/token",
+        {
+          grant_type: "authorization_code",
+          code: authCode,
+          redirect_uri: redirectUri,
         },
-      }
-    );
+        {
+          headers: {
+            Authorization: `Basic ${process.env.REACT_APP_BASE_64}`,
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
 
-    const accessToken = response.data.access_token;
-    tokenStore[accessToken] = code;
+      const accessToken = response.data.access_token;
+      tokenStore[accessToken] = authCode;
 
-    res.json(response.data);
-  } catch (error) {
-    res.status(500).json({ error: "Internal Server Error" });
+      // Redirect to your frontend with the token or relevant info
+      res.redirect(`http://localhost:3000/dashboard?token=${accessToken}`);
+    } catch (error) {
+      console.error("Error during token exchange:", error);
+      // Redirect to an error page or handle the error
+      res.redirect("http://localhost:3000/error");
+    }
+  } else {
+    console.error("Authorization code is missing.");
+    // Handle error or access denied scenario
+    res.redirect("http://localhost:3000/login");
   }
 });
 
+// System Summary endpoint
 app.get("/api/system-summary", async (req, res) => {
   try {
     const end_at = req.query.end_at;
     const currentTime = new Date();
     console.log("Current Server Time:", currentTime.toUTCString());
 
-    // Logging current server time in Unix epoch time (seconds)
     const currentEpochTime = Math.floor(currentTime.getTime() / 1000);
     console.log("Current Server Time (Epoch):", currentEpochTime);
-
-    // const oneDayAgo = currentEpochTime - 24 * 60 * 60;
-
-    //max 288 responses =24hrs. Max 1 day per query
-
-    // console.log(oneDayAgo);
-    // const start_at = oneDayAgo;
 
     const accessToken = req.query.code;
     const storedCode = tokenStore[accessToken];
@@ -67,11 +66,11 @@ app.get("/api/system-summary", async (req, res) => {
     if (!storedCode) {
       throw new Error("Authorization code not found");
     }
+
     const sysId = process.env.REACT_APP_SYSTEMID;
     const key = process.env.REACT_APP_API_KEY;
 
     const response = await axios.get(
-      // `https://api.enphaseenergy.com/api/v4/systems/${sysId}/telemetry/production_micro?start_at=${start_at}&end_at=${currentEpochTime}`,
       `https://api.enphaseenergy.com/api/v4/systems/${sysId}/telemetry/production_micro?end_at=${currentEpochTime}`,
       {
         headers: {
@@ -81,14 +80,14 @@ app.get("/api/system-summary", async (req, res) => {
       }
     );
 
-    // console.log(response.data);
     res.json(response.data);
   } catch (error) {
-    console.error("Error fetching rgm_stats:", error);
+    console.error("Error fetching system summary:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
+// Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
