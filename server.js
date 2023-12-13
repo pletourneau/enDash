@@ -22,6 +22,9 @@ app.get("/initiate-oauth", (req, res) => {
 // OAuth Redirect endpoint
 app.get("/oauth/redirect", async (req, res) => {
   const authCode = req.query.code;
+  const redirectUri =
+    "https://endashpl-9db148c0dbc8.herokuapp.com/oauth/redirect";
+
   if (authCode) {
     try {
       // Exchange the authorization code for an access token
