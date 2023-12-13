@@ -6,7 +6,9 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       // Make a request to the server to initiate the OAuth flow
-      const response = await axios.get("/initiate-oauth");
+      const response = await axios.get(
+        "https://endashpl-9db148c0dbc8.herokuapp.com/initiate-oauth"
+      );
       // Redirect the user to the authorization URL provided by the server
       window.location.href = response.data.authorizationUrl;
     } catch (error) {
