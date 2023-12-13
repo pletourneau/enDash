@@ -46,11 +46,20 @@ app.post("/oauth/token", async (req, res) => {
 
 app.get("/api/system-summary", async (req, res) => {
   try {
-    // Set up query parameters
-    const threeDaysAgo = Math.floor(Date.now() / 1000) - 3 * 24 * 60 * 60; // Six days ago in seconds
-    console.log(threeDaysAgo);
-    const start_at = req.query.start_at || threeDaysAgo;
-    // const end_at = req.query.end_at || Math.floor(Date.now() / 1000);
+    const end_at = req.query.end_at;
+    const currentTime = new Date();
+    console.log("Current Server Time:", currentTime.toUTCString());
+
+    // Logging current server time in Unix epoch time (seconds)
+    const currentEpochTime = Math.floor(currentTime.getTime() / 1000);
+    console.log("Current Server Time (Epoch):", currentEpochTime);
+
+    // const oneDayAgo = currentEpochTime - 24 * 60 * 60;
+
+    //max 288 responses =24hrs. Max 1 day per query
+
+    // console.log(oneDayAgo);
+    // const start_at = oneDayAgo;
 
     const accessToken = req.query.code;
     const storedCode = tokenStore[accessToken];
@@ -62,7 +71,8 @@ app.get("/api/system-summary", async (req, res) => {
     const key = process.env.REACT_APP_API_KEY;
 
     const response = await axios.get(
-      `https://api.enphaseenergy.com/api/v4/systems/${sysId}/telemetry/production_micro?start_at=${start_at}`,
+      // `https://api.enphaseenergy.com/api/v4/systems/${sysId}/telemetry/production_micro?start_at=${start_at}&end_at=${currentEpochTime}`,
+      `https://api.enphaseenergy.com/api/v4/systems/${sysId}/telemetry/production_micro?end_at=${currentEpochTime}`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -71,53 +81,13 @@ app.get("/api/system-summary", async (req, res) => {
       }
     );
 
-    console.log(response.data);
+    // console.log(response.data);
     res.json(response.data);
   } catch (error) {
     console.error("Error fetching rgm_stats:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-//NOT CURRENTLY FUNCTIONING. is it the key part of the path? cant tell from documentation
-
-// app.get("/api/system-summary", async (req, res) => {
-//   try {
-//     const key = process.env.REACT_APP_API_KEY;
-//     const sysId = process.env.REACT_APP_SYSTEMID;
-//     console.log(key);
-//     console.log(sysId);
-//     const accessToken = req.query.code;
-//     const storedCode = tokenStore[accessToken];
-//     // console.log(accessToken); //verified this is correct
-//     if (!storedCode) {
-//       throw new Error("Authorization code not found");
-//     }
-
-//     const response = await axios.get(
-//       // `https://api.enphaseenergy.com/api/v4/systems/${sysId}/?key=${key}`, functional
-
-//       // `https://api.enphaseenergy.com//api/v4/systems/${sys_id}/telemetry/production_micro/?key=${key}`, NOT FUNCTIONAL
-
-//       // `https://api.enphaseenergy.com/api/v4/systems/${sysId}/devices?key=${key}`,
-//       // functional device summary above. see notes for output. NOT USEFUL unless active=true becomes useful
-
-//       `https://api.enphaseenergy.com/api/v4/systems/${sysId}/summary?key=${key}`,
-//       // functional summary above. the other endpoints arent useful or dont function.
-
-//       {
-//         headers: {
-//           Authorization: `Bearer ${accessToken}`,
-//         },
-//       }
-//     );
-
-//     console.log(response);
-//     console.log("Enphase API Response:", response.data);
-//     res.json(response.data);
-//   } catch (error) {
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

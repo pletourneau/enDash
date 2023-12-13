@@ -5,14 +5,21 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import AuthorizationCallback from "./components/AuthorizationCallback";
 import Dashboard from "./components/Dashboard";
+import Footer from "./components/Footer";
+import "./index.css";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/callback" element={<AuthorizationCallback />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-    </Routes>
+    <div id="root" className="main">
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/callback" element={<AuthorizationCallback />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
+      <Footer className="footer" />
+    </div>
   );
 };
 
