@@ -13,15 +13,12 @@ const Dashboard = () => {
         // console.log(accessToken);
         const now = Math.floor(Date.now() / 1000);
         console.log(now);
-        const response = await axios.get(
-          "https://endash-11c45.firebaseapp.com/api/system-summary",
-          {
-            params: {
-              code: accessToken,
-              end_at: now,
-            },
-          }
-        );
+        const response = await axios.get("/api/system-summary", {
+          params: {
+            code: accessToken,
+            end_at: now,
+          },
+        });
 
         setData(response.data);
       } catch (error) {
