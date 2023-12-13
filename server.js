@@ -4,7 +4,7 @@ const axios = require("axios");
 const cors = require("cors");
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 const tokenStore = {};
 
@@ -13,8 +13,10 @@ app.use(cors());
 
 // In your Express server file
 app.get("/initiate-oauth", (req, res) => {
-  const clientId = process.env.REACT_APP_CLIENT_ID;
-  const redirectUri = process.env.REACT_APP_REDIRECT_URI;
+  const clientId = "192ef4c2b2f65ae0e67eb93eb402e430";
+  const redirectUri =
+    "https://endashpl-9db148c0dbc8.herokuapp.com/oauth/redirect";
+
   const authorizationUrl = `https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`;
   res.json({ authorizationUrl });
 });
@@ -47,7 +49,9 @@ app.get("/oauth/redirect", async (req, res) => {
       tokenStore[accessToken] = authCode;
 
       // Redirect to your frontend with the token or relevant info
-      res.redirect(`http://localhost:3000/dashboard?token=${accessToken}`);
+      res.redirect(
+        `https://endashpl-9db148c0dbc8.herokuapp.com/dashboard?token=${accessToken}`
+      );
     } catch (error) {
       console.error("Error during token exchange:", error);
       // Redirect to an error page or handle the error
