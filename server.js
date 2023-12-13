@@ -11,10 +11,17 @@ const tokenStore = {};
 app.use(express.json());
 app.use(cors());
 
+// In your Express server file
+app.get("/initiate-oauth", (req, res) => {
+  const clientId = process.env.REACT_APP_CLIENT_ID;
+  const redirectUri = process.env.REACT_APP_REDIRECT_URI;
+  const authorizationUrl = `https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`;
+  res.json({ authorizationUrl });
+});
+
 // OAuth Redirect endpoint
 app.get("/oauth/redirect", async (req, res) => {
   const authCode = req.query.code;
-  const redirectUri = process.env.REACT_APP_REDIRECT_URI;
   if (authCode) {
     try {
       // Exchange the authorization code for an access token
@@ -23,7 +30,7 @@ app.get("/oauth/redirect", async (req, res) => {
         {
           grant_type: "authorization_code",
           code: authCode,
-          redirect_uri: redirectUri,
+          redirect_uri: "http://localhost:3001/oauth/redirect",
         },
         {
           headers: {

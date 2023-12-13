@@ -23,6 +23,7 @@ code {
 html, body {
   height: 100%;
   margin: 0;
+  /* background-color: lightgray; */
 }
 #root {
   display: flex;
@@ -31,12 +32,16 @@ html, body {
 }
 
 .footer {
-  
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin-top: auto;
-  background-color: "gray";
-  padding: "10px";
-  text-align: "center";
+  background-color: rgb(232, 232, 232);
+  padding: 10px;
+  text-align: center;
 }
+
 .content {
   flex: 1; 
   overflow: auto;

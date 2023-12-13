@@ -1,18 +1,17 @@
 // components/Login.js
 import React from "react";
+import axios from "axios";
 
 const Login = () => {
-  const handleLogin = () => {
-    // Load environment variables from .env file
-    const clientId = process.env.REACT_APP_CLIENT_ID;
-    const redirectUri = process.env.REACT_APP_REDIRECT_URI;
-    console.log(redirectUri);
-
-    // Construct the authorization URL
-    const authorizationUrl = `https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`;
-    console.log("Authorization URL:", authorizationUrl);
-    // Redirect the user to the authorization URL
-    window.location.href = authorizationUrl;
+  const handleLogin = async () => {
+    try {
+      // Make a request to the server to initiate the OAuth flow
+      const response = await axios.get("http://localhost:3001/initiate-oauth");
+      // Redirect the user to the authorization URL provided by the server
+      window.location.href = response.data.authorizationUrl;
+    } catch (error) {
+      console.error("Error initiating OAuth flow:", error);
+    }
   };
 
   return (
