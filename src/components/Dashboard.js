@@ -12,14 +12,18 @@ const Dashboard = () => {
         const accessToken = localStorage.getItem("access_token");
         const now = Math.floor(Date.now() / 1000);
         console.log(now);
-        const response = await axios.get("/api/system-summary", {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-          params: {
-            end_at: now,
-          },
-        });
+        const response = await axios.get(
+          `https://api.enphaseenergy.com/api/v4/systems/${sysId}/telemetry/production_micro?end_at=${now}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              key: process.env.REACT_APP_API_KEY,
+            },
+            params: {
+              end_at: now,
+            },
+          }
+        );
 
         setData(response.data);
       } catch (error) {
