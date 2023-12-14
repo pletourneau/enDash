@@ -78,6 +78,7 @@ app.get("/api/system-summary", async (req, res) => {
   try {
     const authHeader = req.headers.authorization;
     const accessToken = authHeader && authHeader.split(" ")[1];
+    console.log({ accessToken });
 
     if (!accessToken) {
       return res.status(401).send("Access Token is required");
