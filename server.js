@@ -85,10 +85,10 @@ app.get("/api/system-summary", async (req, res) => {
 
     const sysId = process.env.REACT_APP_SYSTEMID;
     const key = process.env.REACT_APP_API_KEY;
-    const currentEpochTime = Math.floor(new Date().getTime() / 1000);
+    const now = Math.floor(new Date().getTime() / 1000);
 
     const response = await axios.get(
-      `https://api.enphaseenergy.com/api/v4/systems/${sysId}/telemetry/production_micro?end_at=${currentEpochTime}`,
+      `https://api.enphaseenergy.com/api/v4/systems/${sysId}/telemetry/production_micro?end_at=${now}`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
