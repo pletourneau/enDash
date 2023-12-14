@@ -18,7 +18,6 @@ const Dashboard = () => {
       // Remove the token from URL for security reasons
       window.history.pushState({}, document.title, "/dashboard");
     }
-
     const accessToken = localStorage.getItem("access_token");
     console.log({ accessToken });
     if (!accessToken) {
