@@ -14,8 +14,10 @@ const Dashboard = () => {
         const now = Math.floor(Date.now() / 1000);
         console.log(now);
         const response = await axios.get("/api/system-summary", {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
           params: {
-            code: accessToken,
             end_at: now,
           },
         });

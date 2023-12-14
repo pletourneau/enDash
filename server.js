@@ -76,11 +76,11 @@ app.get("/oauth/redirect", async (req, res) => {
 // System Summary endpoint
 app.get("/api/system-summary", async (req, res) => {
   try {
-    const accessToken = req.headers.authorization.split(" ")[1]; // Assuming Bearer token is being sent
-    const storedToken = tokenStore[accessToken];
+    const authHeader = req.headers.authorization;
+    const accessToken = authHeader && authHeader.split(" ")[1];
 
-    if (!storedToken) {
-      throw new Error("Authorization token not found");
+    if (!accessToken) {
+      return res.status(401).send("Access Token is required");
     }
 
     const sysId = process.env.REACT_APP_SYSTEMID;
