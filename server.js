@@ -32,14 +32,17 @@ app.get("/oauth/redirect", async (req, res) => {
 
   if (authCode) {
     try {
+      // URL-encode the body parameters
+      const requestBody = querystring.stringify({
+        grant_type: "authorization_code",
+        code: authCode,
+        redirect_uri: redirectUri,
+      });
+
       // Exchange the authorization code for an access token
       const response = await axios.post(
         "https://api.enphaseenergy.com/oauth/token",
-        {
-          grant_type: "authorization_code",
-          code: authCode,
-          redirect_uri: redirectUri,
-        },
+        requestBody,
         {
           headers: {
             Authorization: `Basic ${process.env.REACT_APP_BASE_64}`,
@@ -48,22 +51,18 @@ app.get("/oauth/redirect", async (req, res) => {
         }
       );
 
-      const accessToken = response.data.access_token;
-      tokenStore[accessToken] = authCode;
-
-      // Redirect to your frontend with the token or relevant info
-      res.redirect(
-        `https://endashpl-9db148c0dbc8.herokuapp.com/dashboard?token=${accessToken}`
-      );
+      // Process the response
+      console.log("Access Token Response:", response.data);
+      res.send(response.data);
     } catch (error) {
-      console.error("Error during token exchange:", error);
-      // Redirect to an error page or handle the error
-      res.redirect("http://localhost:3000/error");
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+      res.status(500).send("Error during token exchange");
     }
   } else {
-    console.error("Authorization code is missing.");
-    // Handle error or access denied scenario
-    res.redirect("http://localhost:3000/login");
+    res.status(400).send("Authorization code not provided");
   }
 });
 
