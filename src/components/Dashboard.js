@@ -13,7 +13,7 @@ const Dashboard = () => {
         const now = Math.floor(Date.now() / 1000);
         console.log(now);
         const response = await axios.get(
-          `https://api.enphaseenergy.com/api/v4/systems/${sysId}/telemetry/production_micro?end_at=${now}`,
+          `https://api.enphaseenergy.com/api/v4/systems/2739773/telemetry/production_micro?end_at=${now}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
