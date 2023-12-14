@@ -50,6 +50,12 @@ const Dashboard = () => {
     fetchData();
   }, []);
 
+  const getStatusColor = () => {
+    return data && data.meta && data.meta.status === "normal"
+      ? "green"
+      : "darkred";
+  };
+
   let content;
 
   if (data === null) {
@@ -62,7 +68,12 @@ const Dashboard = () => {
         <div className="flex-grid">test</div>
         <div className="flex-grid">
           <div className="col-4">
-            <div className="row-4">Status area</div>
+            <div
+              className="row-4"
+              style={{ backgroundColor: getStatusColor() }}
+            >
+              Status area
+            </div>
             <div className="row-8">
               How many trees you saved cause you a hippie
             </div>
