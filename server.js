@@ -24,7 +24,7 @@ app.get("/initiate-oauth", (req, res) => {
     "https://endashpl-9db148c0dbc8.herokuapp.com/oauth/redirect";
 
   const authorizationUrl = `https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`;
-  console.log(authorizationUrl);
+  console.log({ authorizationUrl });
   res.json({ authorizationUrl });
 });
 
