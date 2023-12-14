@@ -7,6 +7,7 @@ const Login = () => {
     try {
       // Make a request to the server to initiate the OAuth flow
       const response = await axios.get("/initiate-oauth");
+      console.log(response);
       // Redirect the user to the authorization URL provided by the server
       window.location.href = response.data.authorizationUrl;
     } catch (error) {
