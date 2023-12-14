@@ -10,7 +10,6 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const accessToken = localStorage.getItem("access_token");
-        // console.log(accessToken);
         const now = Math.floor(Date.now() / 1000);
         console.log(now);
         const response = await axios.get("/api/system-summary", {
