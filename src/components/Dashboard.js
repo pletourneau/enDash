@@ -70,7 +70,7 @@ const Dashboard = () => {
           <div className="col-4">
             <div className="row-4">
               <img
-                src="../img/circle-icon.svg"
+                src="../img/favicon.ico"
                 style={{ backgroundColor: getStatusColor() }}
               />
             </div>
