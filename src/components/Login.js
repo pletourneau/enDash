@@ -9,6 +9,7 @@ const Login = () => {
   console.log(exp);
   const handleLogin = async () => {
     if (now < exp) {
+      const [setData] = useState(null);
       const response = await axios.get("/api/system-summary", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
