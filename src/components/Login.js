@@ -2,10 +2,10 @@
 import React from "react";
 import axios from "axios";
 
-const exp = localStorage.getItem("expires_at");
-console.log(exp);
-const now = Math.floor(Date.now() / 1000);
-console.log(now);
+// const exp = localStorage.getItem("expires_at");
+// console.log(exp);
+// const now = Math.floor(Date.now() / 1000);
+// console.log(now);
 const Login = () => {
   const handleLogin = async () => {
     try {

@@ -53,15 +53,15 @@ app.get("/oauth/redirect", async (req, res) => {
       );
       const expiresIn = parseInt(response.data.expires_in, 10); // Make sure to parse it as an integer
       const expiresAt = Date.now() + expiresIn * 1000; // Convert expiresIn to milliseconds and add to current time
-      
+
       // Store the token and redirect
       tokenStore[response.data.access_token] = {
         accessToken: response.data.access_token,
         refreshToken: response.data.refresh_token,
-        expiresIn: expiresAt,
+        expiresAt: expiresAt,
       };
       console.log(tokenStore[response.data.access_token].accessToken);
-      const 
+      console.log(expiresAt);
       // Redirect to a secure page or display a success message
       // res.redirect("/dashboard");
       res.redirect(
