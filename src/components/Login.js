@@ -4,6 +4,7 @@ import axios from "axios";
 
 const Login = () => {
   const handleLogin = async () => {
+    console.log(localStorage.getItem("expires_in"));
     try {
       // Make a request to the server to initiate the OAuth flow
       const response = await axios.get("/initiate-oauth");
