@@ -65,7 +65,7 @@ const Dashboard = () => {
 
     content = (
       <div>
-        <div className="flex-grid">test</div>
+        <div className="flex-grid">Still need a header paul</div>
         <div className="flex-grid">
           <div className="col-4">
             <div
