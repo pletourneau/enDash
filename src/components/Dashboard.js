@@ -70,15 +70,15 @@ const Dashboard = () => {
           <div className="col-4">
             <div className="row-4">
               <img
-                src="../img/favicon.ico"
+                src="../../public/favicon.ico"
                 style={{ backgroundColor: getStatusColor() }}
               />
               <img
-                src="../img/Greenlink-Energy-Solutions-Logo.svg"
+                src="../../public/Powered_By_Enphase_Logo_RGB copy.png"
                 style={{ backgroundColor: getStatusColor() }}
               />
               <img
-                src="../img/Powered_By_Enphase_Logo_RGB.png"
+                src="../../public/Greenlink-Energy-Solutions-Logo copy.svg"
                 style={{ backgroundColor: getStatusColor() }}
               />
             </div>
