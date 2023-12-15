@@ -87,6 +87,18 @@ html, body {
   flex-direction: column;
 }
 
+.statusCol, .kWhCol {
+  display: flex;
+  flex-direction: column;
+}
+.statusCol{
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+}
+.kWhCol {
+  flex: 0 0 66.6666%;
+  max-width: 66.6666%;
+}
 .row-4 {
   flex-grow: 1; /* Will grow to take 1 part of the space */
   background-color: aqua;

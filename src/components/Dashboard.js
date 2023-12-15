@@ -97,7 +97,7 @@ const Dashboard = () => {
   const getStatusMessage = () => {
     if (data && data.meta && data.meta.status) {
       return data.meta.status === "normal"
-        ? "System is operating normally."
+        ? "Normal"
         : `Alert: ${data.meta.status}`;
     }
     return "Status Unavailable";
@@ -121,7 +121,7 @@ const Dashboard = () => {
               </div>
               <div className="kWhCol">
                 <p>
-                  You produced ${totalPower} in ${timeElapsedInHours}
+                  You produced {totalPower} watts in {timeElapsedInHours} hours
                 </p>
               </div>
             </div>
