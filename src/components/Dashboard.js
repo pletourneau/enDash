@@ -68,11 +68,11 @@ const Dashboard = () => {
         <div className="flex-grid">Still need a header paul</div>
         <div className="flex-grid">
           <div className="col-4">
-            <div
-              className="row-4"
-              
-            >
-              <img src="../img/circle-icon.svg" style={{ backgroundColor: getStatusColor() }}>
+            <div className="row-4">
+              <img
+                src="../img/circle-icon.svg"
+                style={{ backgroundColor: getStatusColor() }}
+              />
             </div>
             <div className="row-8">
               How many trees you saved cause you a hippie
