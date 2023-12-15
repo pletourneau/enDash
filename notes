@@ -7,6 +7,8 @@ moved out of parent folder to proper struct
 12-10 SUCCESS! Though each API req is going through twice. Can you fix? 
 What infor do you want? Can you dump info into db? Firestore? WHAT DATA?
 
+12-12 API reqs only once. Hosted on Heroku
+
 
 https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=192ef4c2b2f65ae0e67eb93eb402e430&redirect_uri=http://localhost:3001/oauth/redirect
 
