@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PowerChart from "./Chart";
 import "../index.css";
+import FooterPic from "../img/Powered_By_Enphase_Logo_RGB.png";
+import GreenLink from "../img/Greenlink-Energy-Solutions-Logo.svg";
 
 const Dashboard = () => {
   const [data, setData] = useState(null);
@@ -70,15 +72,11 @@ const Dashboard = () => {
           <div className="col-4">
             <div className="row-4">
               <img
-                src="../../public/favicon.ico"
+                src={FooterPic}
                 style={{ backgroundColor: getStatusColor() }}
               />
               <img
-                src="../../public/Powered_By_Enphase_Logo_RGB copy.png"
-                style={{ backgroundColor: getStatusColor() }}
-              />
-              <img
-                src="../../public/Greenlink-Energy-Solutions-Logo copy.svg"
+                src={GreenLink}
                 style={{ backgroundColor: getStatusColor() }}
               />
             </div>
