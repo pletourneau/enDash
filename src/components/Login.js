@@ -1,5 +1,5 @@
 // components/Login.js
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 
 const Login = () => {
@@ -9,17 +9,8 @@ const Login = () => {
   console.log(exp);
   const handleLogin = async () => {
     if (now < exp) {
-      const [setData] = useState(null);
-      const response = await axios.get("/api/system-summary", {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          key: process.env.REACT_APP_API_KEY,
-        },
-        params: {
-          end_at: now,
-        },
-      });
-      setData(response.data);
+      window.location.href = "/dashboard";
+      return;
     } else {
       try {
         // Make a request to the server to initiate the OAuth flow
