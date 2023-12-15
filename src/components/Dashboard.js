@@ -27,12 +27,8 @@ const Dashboard = () => {
     }
     const storedAccessToken = localStorage.getItem("access_token");
     console.log({ storedAccessToken });
-    // const storedRefreshToken = localStorage.getItem("refresh_token");
-    // console.log({ storedRefreshToken });
-    // const expiresInStore = localStorage.getItem("expires_in");
-    // console.log({ expiresInStore });
+
     if (!storedAccessToken) {
-      // Handle the absence of a token (e.g., redirect to login)
       console.log("No access token found");
       return;
     }
@@ -84,7 +80,7 @@ const Dashboard = () => {
       startTime !== Infinity && endTime !== -Infinity ? endTime - startTime : 0;
     const timeElapsedInHours = timeElapsedInSeconds / 3600;
 
-    const kWh = totalPower / 1000;
+    const kWh = Math.floor(totalPower / 1000);
     return {
       kWh,
       timeElapsedInHours,
@@ -115,18 +111,17 @@ const Dashboard = () => {
         <div className="flex-grid">Still need a header paul</div>
         <div className="flex-grid">
           <div className="col-4">
-            <div className="row-4">
-              <div className="statusCol">
-                <img src={ico} style={{ color: getStatusColor() }} />
-                <p>Status: {getStatusMessage()}</p>
-              </div>
-              <div className="kWhCol">
-                <p>
-                  You produced {kWh} kWh in {timeElapsedInHours} hours
-                </p>
-              </div>
+            <div className="statusCol">
+              <img src={ico} style={{ color: getStatusColor() }} />
+              <p>Status: {getStatusMessage()}</p>
             </div>
-            <div className="row-8">
+            <div className="kWhCol">
+              <p>
+                You produced {kWh} kWh in {timeElapsedInHours} hours
+              </p>
+            </div>
+
+            <div className="hippie">
               How many trees you saved cause you a hippie
             </div>
           </div>

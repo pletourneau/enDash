@@ -79,24 +79,22 @@ html, body {
 }
 
 .row-4 {
-  display: flex; /* Make row-4 a flex container */
-  justify-content: space-between; /* Space out the children */
+  /* display: flex; /* Make row-4 a flex container */
+  /* justify-content: space-between; Space out the children  */
   background-color: aqua;
 }
 
-.statusCol, .kWhCol {
-  padding: 10px; /* Add some padding for better spacing */
-}
 
-.statusCol {
+
+/* .statusCol {
   flex: 1;
 }
 
 .kWhCol {
   flex: 2;
-}
+} */
 
 .row-8 {
-  flex-grow: 2; /* Will grow to take 2 parts of the space */
+  
   background-color: pink;
 }
