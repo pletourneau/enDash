@@ -60,6 +60,7 @@ app.get("/oauth/redirect", async (req, res) => {
         expiresAt: response.data.expires_at + 80000,
       };
       console.log(tokenStore[response.data.access_token].accessToken);
+      console.log(tokenStore[response.data.access_token].expiresAt);
       // Redirect to a secure page or display a success message
       // res.redirect("/dashboard");
       res.redirect(
