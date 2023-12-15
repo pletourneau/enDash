@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PowerChart from "./Chart";
 import "../index.css";
-import FooterPic from "../img/Powered_By_Enphase_Logo_RGB.png";
-import ico from "../../public/favicon.ico";
+import ico from "../img/favicon.ico";
 
 const Dashboard = () => {
   const [data, setData] = useState(null);
