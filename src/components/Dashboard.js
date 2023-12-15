@@ -16,15 +16,20 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    const { accessToken, refreshToken } = getTokensFromURL();
+    const { accessToken, refreshToken, expiresIn } = getTokensFromURL();
     if (accessToken && refreshToken) {
       localStorage.setItem("access_token", accessToken);
       localStorage.setItem("refresh_token", refreshToken);
+      localStorage.setItem("expires_in", expiresIn);
       // Remove the token from URL for security reasons
       window.history.pushState({}, document.title, "/dashboard");
     }
     const storedAccessToken = localStorage.getItem("access_token");
     console.log({ storedAccessToken });
+    const storedRefreshToken = localStorage.getItem("refresh_token");
+    console.log({ storedRefreshToken });
+    const expiresInStore = localStorage.getItem("expires_in");
+    console.log({ expiresInStore });
     if (!storedAccessToken) {
       // Handle the absence of a token (e.g., redirect to login)
       console.log("No access token found");
