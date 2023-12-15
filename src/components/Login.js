@@ -2,7 +2,8 @@
 import React from "react";
 import axios from "axios";
 
-console.log(localStorage.getItem("expires_at"));
+const exp = localStorage.getItem("expires_at");
+console.log(exp);
 const now = Math.floor(Date.now() / 1000);
 console.log(now);
 const Login = () => {
