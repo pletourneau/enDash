@@ -70,9 +70,9 @@ const Dashboard = () => {
           <div className="col-4">
             <div
               className="row-4"
-              style={{ backgroundColor: getStatusColor() }}
+              
             >
-              Status area
+              <img src="../img/circle-icon.svg" style={{ backgroundColor: getStatusColor() }}>
             </div>
             <div className="row-8">
               How many trees you saved cause you a hippie
