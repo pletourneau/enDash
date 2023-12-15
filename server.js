@@ -57,7 +57,7 @@ app.get("/oauth/redirect", async (req, res) => {
         accessToken: response.data.access_token,
         refreshToken: response.data.refresh_token,
         // expiresIn: response.data.expires_in,
-        expiresAt: response.data.expires_at + 80000,
+        expiresAt: parseInt(response.data.expires_at, 10) + 80000,
       };
       console.log(tokenStore[response.data.access_token].accessToken);
       console.log(tokenStore[response.data.access_token].expiresAt);
