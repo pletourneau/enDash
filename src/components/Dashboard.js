@@ -73,6 +73,14 @@ const Dashboard = () => {
                 src="../img/favicon.ico"
                 style={{ backgroundColor: getStatusColor() }}
               />
+              <img
+                src="../img/Greenlink-Energy-Solutions-Logo.svg"
+                style={{ backgroundColor: getStatusColor() }}
+              />
+              <img
+                src="../img/Powered_By_Enphase_Logo_RGB.png"
+                style={{ backgroundColor: getStatusColor() }}
+              />
             </div>
             <div className="row-8">
               How many trees you saved cause you a hippie
