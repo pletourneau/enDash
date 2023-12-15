@@ -3,7 +3,7 @@ import axios from "axios";
 import PowerChart from "./Chart";
 import "../index.css";
 import FooterPic from "../img/Powered_By_Enphase_Logo_RGB.png";
-import GreenLink from "../img/Greenlink-Energy-Solutions-Logo.svg";
+import ico from "../../public/favicon.ico";
 
 const Dashboard = () => {
   const [data, setData] = useState(null);
@@ -71,14 +71,11 @@ const Dashboard = () => {
         <div className="flex-grid">
           <div className="col-4">
             <div className="row-4">
-              <img
+              {/* <img
                 src={FooterPic}
                 style={{ backgroundColor: getStatusColor() }}
-              />
-              <img
-                src={GreenLink}
-                style={{ backgroundColor: getStatusColor() }}
-              />
+              /> */}
+              <img src={ico} style={{ backgroundColor: getStatusColor() }} />
             </div>
             <div className="row-8">
               How many trees you saved cause you a hippie
