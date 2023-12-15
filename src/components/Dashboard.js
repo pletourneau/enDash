@@ -67,6 +67,33 @@ const Dashboard = () => {
       : "darkred";
   };
 
+  const getTotalPowerAndElapsedTime = (data) => {
+    let totalPower = 0;
+    let startTime = Infinity;
+    let endTime = -Infinity;
+
+    if (data && data.intervals) {
+      data.intervals.forEach((interval) => {
+        totalPower += interval.powr || 0;
+        startTime = Math.min(startTime, interval.end_at || Infinity);
+        endTime = Math.max(endTime, interval.end_at || -Infinity);
+      });
+    }
+
+    const timeElapsedInSeconds =
+      startTime !== Infinity && endTime !== -Infinity ? endTime - startTime : 0;
+    const timeElapsedInHours = timeElapsedInSeconds / 3600;
+
+    return {
+      totalPower,
+      timeElapsedInHours,
+    };
+  };
+
+  const { totalPower, timeElapsedInHours } = getTotalPowerAndElapsedTime(data);
+  console.log("Total Power:", totalPower);
+  console.log("Time Elapsed:", timeElapsedInHours, "hours");
+
   const getStatusMessage = () => {
     if (data && data.meta && data.meta.status) {
       return data.meta.status === "normal"
@@ -88,8 +115,15 @@ const Dashboard = () => {
         <div className="flex-grid">
           <div className="col-4">
             <div className="row-4">
-              <img src={ico} style={{ color: getStatusColor() }} />
-              <p>Status: {getStatusMessage()}</p>
+              <div className="statusCol">
+                <img src={ico} style={{ color: getStatusColor() }} />
+                <p>Status: {getStatusMessage()}</p>
+              </div>
+              <div className="kWhCol">
+                <p>
+                  You produced ${totalPower} in ${timeElapsedInHours}
+                </p>
+              </div>
             </div>
             <div className="row-8">
               How many trees you saved cause you a hippie
