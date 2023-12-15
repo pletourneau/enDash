@@ -22,7 +22,7 @@ ChartJS.register(
 const PowerChart = ({ data }) => {
   // Filter out intervals where powr is 0
   const filteredIntervals = data.intervals.filter(
-    (interval) => interval.powr !== 0
+    (interval) => interval.enwh !== 0
   );
 
   // Transform the filtered data into a format suitable for Chart.js
@@ -35,8 +35,8 @@ const PowerChart = ({ data }) => {
     }),
     datasets: [
       {
-        label: "Power",
-        data: filteredIntervals.map((interval) => interval.powr),
+        label: "Watt Hours",
+        data: filteredIntervals.map((interval) => interval.enwh),
         backgroundColor: "rgba(54, 162, 235, 0.6)",
         borderColor: "rgba(54, 162, 235, 1)",
         borderWidth: 1,

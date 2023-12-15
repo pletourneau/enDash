@@ -74,7 +74,7 @@ const Dashboard = () => {
 
     if (data && data.intervals) {
       data.intervals.forEach((interval) => {
-        totalPower += interval.powr || 0;
+        totalPower += interval.enwh || 0;
         startTime = Math.min(startTime, interval.end_at || Infinity);
         endTime = Math.max(endTime, interval.end_at || -Infinity);
       });
@@ -84,13 +84,14 @@ const Dashboard = () => {
       startTime !== Infinity && endTime !== -Infinity ? endTime - startTime : 0;
     const timeElapsedInHours = timeElapsedInSeconds / 3600;
 
+    const kWh = totalPower / 1000;
     return {
-      totalPower,
+      kWh,
       timeElapsedInHours,
     };
   };
 
-  const { totalPower, timeElapsedInHours } = getTotalPowerAndElapsedTime(data);
+  const { kWh, timeElapsedInHours } = getTotalPowerAndElapsedTime(data);
   console.log("Total Power:", totalPower);
   console.log("Time Elapsed:", timeElapsedInHours, "hours");
 
@@ -121,7 +122,7 @@ const Dashboard = () => {
               </div>
               <div className="kWhCol">
                 <p>
-                  You produced {totalPower} watts in {timeElapsedInHours} hours
+                  You produced {kWh} kWh in {timeElapsedInHours} hours
                 </p>
               </div>
             </div>
