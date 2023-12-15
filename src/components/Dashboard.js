@@ -7,21 +7,25 @@ import ico from "../img/favicon.ico";
 const Dashboard = () => {
   const [data, setData] = useState(null);
 
-  const getAccessTokenFromURL = () => {
+  const getTokensFromURL = () => {
     const query = new URLSearchParams(window.location.search);
-    return query.get("access_token");
+    return {
+      accessToken: query.get("access_token"),
+      refreshToken: query.get("refresh_token"),
+    };
   };
 
   useEffect(() => {
-    const accessTokenFromURL = getAccessTokenFromURL();
-    if (accessTokenFromURL) {
-      localStorage.setItem("access_token", accessTokenFromURL);
+    const { accessToken, refreshToken } = getTokensFromURL();
+    if (accessToken && refreshToken) {
+      localStorage.setItem("access_token", accessToken);
+      localStorage.setItem("refresh_token", refreshToken);
       // Remove the token from URL for security reasons
       window.history.pushState({}, document.title, "/dashboard");
     }
-    const accessToken = localStorage.getItem("access_token");
-    console.log({ accessToken });
-    if (!accessToken) {
+    const storedAccessToken = localStorage.getItem("access_token");
+    console.log({ storedAccessToken });
+    if (!storedAccessToken) {
       // Handle the absence of a token (e.g., redirect to login)
       console.log("No access token found");
       return;
