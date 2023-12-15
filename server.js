@@ -20,14 +20,14 @@ app.get("/initiate-oauth", (req, res) => {
     "https://endashpl-9db148c0dbc8.herokuapp.com/oauth/redirect";
 
   const authorizationUrl = `https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`;
-  console.log({ authorizationUrl });
+  // console.log({ authorizationUrl });
   res.json({ authorizationUrl });
 });
 
 // OAuth Redirect endpoint
 app.get("/oauth/redirect", async (req, res) => {
   const authCode = req.query.code;
-  console.log({ authCode });
+  // console.log({ authCode });
   const redirectUri =
     "https://endashpl-9db148c0dbc8.herokuapp.com/oauth/redirect";
 
@@ -61,7 +61,9 @@ app.get("/oauth/redirect", async (req, res) => {
       console.log(tokenStore[response.data.access_token].accessToken);
       // Redirect to a secure page or display a success message
       // res.redirect("/dashboard");
-      res.redirect(`/dashboard?access_token=${response.data.access_token}`);
+      res.redirect(
+        `/dashboard?access_token=${response.data.access_token}&refresh_token=${response.data.refresh_token}`
+      );
     } catch (error) {
       console.error(
         "Error:",
