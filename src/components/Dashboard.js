@@ -92,7 +92,7 @@ const Dashboard = () => {
   };
 
   const { kWh, timeElapsedInHours } = getTotalPowerAndElapsedTime(data);
-  console.log("Total Power:", totalPower);
+  console.log("Total kWh", kWh);
   console.log("Time Elapsed:", timeElapsedInHours, "hours");
 
   const getStatusMessage = () => {
