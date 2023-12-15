@@ -12,6 +12,7 @@ const Dashboard = () => {
     return {
       accessToken: query.get("access_token"),
       refreshToken: query.get("refresh_token"),
+      expiresIn: query.get("expires_in"),
     };
   };
 
