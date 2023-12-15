@@ -71,10 +71,6 @@ const Dashboard = () => {
         <div className="flex-grid">
           <div className="col-4">
             <div className="row-4">
-              {/* <img
-                src={FooterPic}
-                style={{ backgroundColor: getStatusColor() }}
-              /> */}
               <img src={ico} style={{ backgroundColor: getStatusColor() }} />
             </div>
             <div className="row-8">
