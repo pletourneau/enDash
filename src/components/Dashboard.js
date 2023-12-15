@@ -67,6 +67,14 @@ const Dashboard = () => {
       : "darkred";
   };
 
+  const getStatusMessage = () => {
+    if (data && data.meta && data.meta.status) {
+      return data.meta.status === "normal"
+        ? "System is operating normally."
+        : `Alert: ${data.meta.status}`;
+    }
+    return "Status Unavailable";
+  };
   let content;
 
   if (data === null) {
@@ -81,6 +89,7 @@ const Dashboard = () => {
           <div className="col-4">
             <div className="row-4">
               <img src={ico} style={{ color: getStatusColor() }} />
+              <p>Status: {getStatusMessage()}</p>
             </div>
             <div className="row-8">
               How many trees you saved cause you a hippie
