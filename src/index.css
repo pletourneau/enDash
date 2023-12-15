@@ -6,25 +6,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* @media (max-width: 400px) {
-  .flex-grid,
-  .flex-grid-thirds {
-    display: block;
-    .col {
-      width: 100%;
-      margin: 0 0 10px 0;
-    }
-  }
-} */
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
 html, body {
   height: 100%;
   margin: 0;
-  /* background-color: lightgray; */
 }
+
 #root {
   display: flex;
   flex-direction: column;
@@ -51,7 +42,6 @@ html, body {
   max-width: 20vw;
   height: auto;
   float: right;
-  
 }
 
 .gll {
@@ -63,9 +53,11 @@ html, body {
 .flex-grid {
   display: flex;
 }
+
 .flex-grid .col {
   flex: 1;
 }
+
 .flex-grid-thirds {
   display: flex;
   justify-content: space-between;
@@ -81,27 +73,27 @@ html, body {
   max-width: 66.6666%;
 }
 
-.col-4,
-.col-8 {
+.col-4, .col-8 {
   display: flex;
   flex-direction: column;
 }
 
-.statusCol, .kWhCol {
-  display: flex;
-  flex-direction: column;
-}
-.statusCol{
-  flex: 0 0 33.3333%;
-  max-width: 33.3333%;
-}
-.kWhCol {
-  flex: 0 0 66.6666%;
-  max-width: 66.6666%;
-}
 .row-4 {
-  flex-grow: 1; /* Will grow to take 1 part of the space */
+  display: flex; /* Make row-4 a flex container */
+  justify-content: space-between; /* Space out the children */
   background-color: aqua;
+}
+
+.statusCol, .kWhCol {
+  padding: 10px; /* Add some padding for better spacing */
+}
+
+.statusCol {
+  flex: 1;
+}
+
+.kWhCol {
+  flex: 2;
 }
 
 .row-8 {
