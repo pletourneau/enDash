@@ -79,6 +79,40 @@ app.get("/oauth/redirect", async (req, res) => {
   }
 });
 
+//refresh token exchange
+app.post("/refresh-token", async (req, res) => {
+  const refreshToken = req.body.refreshToken;
+
+  try {
+    const requestBody = querystring.stringify({
+      grant_type: "refresh_token",
+      refresh_token: refreshToken,
+    });
+
+    const response = await axios.post(
+      "https://api.enphaseenergy.com/oauth/token",
+      requestBody,
+      {
+        headers: {
+          Authorization: `Basic ${process.env.REACT_APP_BASE_64}`,
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      }
+    );
+
+    const expiresIn = parseInt(response.data.expires_in, 10);
+    const expiresAt = Date.now() + expiresIn * 1000;
+
+    res.json({
+      accessToken: response.data.access_token,
+      refreshToken: response.data.refresh_token,
+      expiresAt: expiresAt,
+    });
+  } catch (error) {
+    console.error("Error refreshing token:", error);
+    res.status(500).send("Error during token refresh");
+  }
+});
 // System Summary endpoint
 app.get("/api/system-summary", async (req, res) => {
   try {
