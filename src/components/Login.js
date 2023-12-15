@@ -2,9 +2,11 @@
 import React from "react";
 import axios from "axios";
 
+console.log(localStorage.getItem("expires_at"));
+const now = Math.floor(Date.now() / 1000);
+console.log(now);
 const Login = () => {
   const handleLogin = async () => {
-    console.log(localStorage.getItem("expires_in"));
     try {
       // Make a request to the server to initiate the OAuth flow
       const response = await axios.get("/initiate-oauth");

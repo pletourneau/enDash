@@ -12,25 +12,25 @@ const Dashboard = () => {
     return {
       accessToken: query.get("access_token"),
       refreshToken: query.get("refresh_token"),
-      expiresIn: query.get("expires_in"),
+      expiresAt: query.get("expires_at"),
     };
   };
 
   useEffect(() => {
-    const { accessToken, refreshToken, expiresIn } = getTokensFromURL();
+    const { accessToken, refreshToken, expiresAt } = getTokensFromURL();
     if (accessToken && refreshToken) {
       localStorage.setItem("access_token", accessToken);
       localStorage.setItem("refresh_token", refreshToken);
-      localStorage.setItem("expires_in", expiresIn);
+      localStorage.setItem("expires_at", expiresAt);
       // Remove the token from URL for security reasons
       window.history.pushState({}, document.title, "/dashboard");
     }
     const storedAccessToken = localStorage.getItem("access_token");
     console.log({ storedAccessToken });
-    const storedRefreshToken = localStorage.getItem("refresh_token");
-    console.log({ storedRefreshToken });
-    const expiresInStore = localStorage.getItem("expires_in");
-    console.log({ expiresInStore });
+    // const storedRefreshToken = localStorage.getItem("refresh_token");
+    // console.log({ storedRefreshToken });
+    // const expiresInStore = localStorage.getItem("expires_in");
+    // console.log({ expiresInStore });
     if (!storedAccessToken) {
       // Handle the absence of a token (e.g., redirect to login)
       console.log("No access token found");
@@ -38,7 +38,7 @@ const Dashboard = () => {
     }
 
     const now = Math.floor(Date.now() / 1000);
-    console.log(now);
+    // console.log(now);
 
     const fetchData = async () => {
       try {

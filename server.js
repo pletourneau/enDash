@@ -56,13 +56,14 @@ app.get("/oauth/redirect", async (req, res) => {
       tokenStore[response.data.access_token] = {
         accessToken: response.data.access_token,
         refreshToken: response.data.refresh_token,
-        expiresIn: response.data.expires_in,
+        // expiresIn: response.data.expires_in,
+        expiresAt: response.data.expires_at + 80000,
       };
       console.log(tokenStore[response.data.access_token].accessToken);
       // Redirect to a secure page or display a success message
       // res.redirect("/dashboard");
       res.redirect(
-        `/dashboard?access_token=${response.data.access_token}&refresh_token=${response.data.refresh_token}&expires_in=${response.data.expires_in}`
+        `/dashboard?access_token=${response.data.access_token}&refresh_token=${response.data.refresh_token}&expires_at=${response.data.expires_at}`
       );
     } catch (error) {
       console.error(
