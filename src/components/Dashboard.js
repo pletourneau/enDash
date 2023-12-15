@@ -44,7 +44,7 @@ const Dashboard = () => {
       try {
         const response = await axios.get("/api/system-summary", {
           headers: {
-            Authorization: `Bearer ${accessToken}`,
+            Authorization: `Bearer ${storedAccessToken}`,
             key: process.env.REACT_APP_API_KEY,
           },
           params: {
