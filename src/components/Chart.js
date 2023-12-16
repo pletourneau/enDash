@@ -29,13 +29,14 @@ const PowerChart = ({ data }) => {
   const chartData = {
     labels: filteredIntervals.map((interval) => {
       const date = new Date(interval.end_at * 1000);
-      return `${
-        date.getMonth() + 1
-      }/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+      // return `${
+      //   date.getMonth() + 1
+      // }/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+      return `${date.getMonth() + 1}/${date.getHours()}:${date.getMinutes()}`;
     }),
     datasets: [
       {
-        label: "Watt Hours",
+        label: "Watt Hours Produced",
         data: filteredIntervals.map((interval) => interval.enwh),
         backgroundColor: "rgba(54, 162, 235, 0.6)",
         borderColor: "rgba(54, 162, 235, 1)",
