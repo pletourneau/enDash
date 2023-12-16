@@ -29,10 +29,8 @@ const PowerChart = ({ data }) => {
   const chartData = {
     labels: filteredIntervals.map((interval) => {
       const date = new Date(interval.end_at * 1000);
-      // return `${
-      //   date.getMonth() + 1
-      // }/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
-      return `${date.getMonth() + 1}/${date.getHours()}:${date.getMinutes()}`;
+
+      return `${date.getHours()}:${date.getMinutes()}`;
     }),
     datasets: [
       {
