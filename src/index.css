@@ -74,22 +74,7 @@ html, body {
 }
 
 
-/* not functioning */
 
-/* .hippie {
-  display: flex; 
-  flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
-  width: 100%; 
-} */
-
-/* .col-4, .statusCol {
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
-  
-} */
 .col-8 {
   flex: 0 0 80%; 
   max-width: 80%;
@@ -107,6 +92,7 @@ html, body {
   justify-content: center; 
   align-items: center; 
   width: 100%; 
+  padding-top: 10%;
 }
 
 .row-8 {
@@ -139,5 +125,6 @@ html, body {
 
 .kWhCol {
   width: 100%;
+  justify-content: center;
 }
 
