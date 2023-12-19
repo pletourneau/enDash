@@ -108,7 +108,7 @@ const Dashboard = () => {
 
     content = (
       <div>
-        <div className="flex-grid">Still need a header paul</div>
+        {/* <div className="flex-grid">Still need a header paul</div> */}
         <div className="flex-grid">
           <div className="col-4">
             <div className="statusCol">
@@ -130,7 +130,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="col-8">
-            <h2>Dashboard</h2>
+            {/* <h2>Dashboard</h2> */}
             {data && <PowerChart data={data} />}
           </div>
         </div>
