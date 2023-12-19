@@ -113,7 +113,7 @@ app.post("/refresh-token", async (req, res) => {
     res.status(500).send("Error during token refresh");
   }
 });
-// System Summary endpoint
+// System endpoints
 app.get("/api/micros-telemetry", async (req, res) => {
   try {
     const authHeader = req.headers.authorization;
@@ -128,7 +128,7 @@ app.get("/api/micros-telemetry", async (req, res) => {
     const key = process.env.REACT_APP_API_KEY;
     const now = Math.floor(new Date().getTime() / 1000);
 
-    const response = await axios.get(
+    const telemetryResponse = await axios.get(
       `https://api.enphaseenergy.com/api/v4/systems/${sysId}/telemetry/production_micro?end_at=${now}`,
       {
         headers: {
@@ -138,7 +138,22 @@ app.get("/api/micros-telemetry", async (req, res) => {
       }
     );
 
-    res.json(response.data);
+    const summaryResponse = await axios.get(
+      `https://api.enphaseenergy.com/api/v4/systems/${sysId}/summary`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          key: key,
+        },
+      }
+    );
+
+    const combinedResponse = {
+      telemetry: telemetryResponse.data,
+      summary: summaryResponse.data,
+    };
+
+    res.json(combinedResponse);
   } catch (error) {
     console.error("Error fetching system summary:", error);
     res.status(500).json({ error: "Internal Server Error" });

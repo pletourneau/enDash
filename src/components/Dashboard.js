@@ -5,7 +5,8 @@ import "../index.css";
 import ico from "../img/favicon.ico";
 
 const Dashboard = () => {
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
+  const [data, setData] = useState({ summary: null, telemetry: null });
 
   const getTokensFromURL = () => {
     const query = new URLSearchParams(window.location.search);
@@ -22,11 +23,10 @@ const Dashboard = () => {
       localStorage.setItem("access_token", accessToken);
       localStorage.setItem("refresh_token", refreshToken);
       localStorage.setItem("expires_at", expiresAt);
-      // Remove the token from URL for security reasons
+
       window.history.pushState({}, document.title, "/dashboard");
     }
     const storedAccessToken = localStorage.getItem("access_token");
-    console.log({ storedAccessToken });
 
     if (!storedAccessToken) {
       console.log("No access token found");
@@ -34,7 +34,6 @@ const Dashboard = () => {
     }
 
     const now = Math.floor(Date.now() / 1000);
-    // console.log(now);
 
     const fetchData = async () => {
       try {
@@ -48,7 +47,20 @@ const Dashboard = () => {
           },
         });
 
-        setData(response.data);
+        // const summaryResponse = await axios.get("/api/system-detail", {
+        //   headers: {
+        //     Authorization: `Bearer ${storedAccessToken}`,
+        //     key: process.env.REACT_APP_API_KEY,
+        //   },
+        //   params: {
+        //     end_at: now,
+        //   },
+        // });
+
+        setData({
+          summary: response.data.summary,
+          telemetry: response.data.telemetry,
+        });
       } catch (error) {
         console.error("Error fetching summary data:", error);
       }
@@ -87,6 +99,10 @@ const Dashboard = () => {
     };
   };
 
+  const energyLifetimeKWh = data.summary
+    ? data.summary.energy_lifetime / 1000
+    : 0;
+  // const treesSaved = add logic
   const { kWh, timeElapsedInHours } = getTotalPowerAndElapsedTime(data);
   console.log("Total kWh", kWh);
   console.log("Time Elapsed:", timeElapsedInHours, "hours");
@@ -127,7 +143,7 @@ const Dashboard = () => {
             </div>
 
             <div className="hippie">
-              How many trees you saved cause you a hippie
+              energy produced for ev er{energyLifetimeKWh}
             </div>
           </div>
           <div className="col-8">{data && <PowerChart data={data} />}</div>
