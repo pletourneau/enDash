@@ -145,37 +145,30 @@ const Dashboard = () => {
               />
               <p>Status: {getStatusMessage()}</p>
             </div>
-            <div>
-              <div className="kWhCol">
-                <div className="box">
-                  <div className="prod">
-                    <h5>TODAY</h5>
-                    <h3 className="num">{kWh} kWh</h3>
-                  </div>
-                  <div className="prod">
-                    <h5>LIFETIME</h5>
-                    <h3 className="num">{energyLifetimeKWh} kWh</h3>
-                  </div>
-                </div>
+
+            <div className="kWhCol">
+              <div className="prod">
+                <h5>TODAY</h5>
+                <h3 className="num">{kWh} kWh</h3>
+              </div>
+              <div className="prod">
+                <h5>LIFETIME</h5>
+                <h3 className="num">{energyLifetimeKWh} kWh</h3>
               </div>
             </div>
+
             <div className="hippie">
-              <div>
-                <img src={bob} alt="Bob friggin Ross" />
-              </div>
-              <div>
-                <h5>This is the equivalent of</h5>
-                <h3>{happyTrees}</h3>
-                <h3> happy little tree seedlings</h3>
-                <h5>grown over 10 years</h5>
-              </div>
+              <img src={bob} alt="Bob friggin Ross" />
+              <h5>This is the equivalent of {happyTrees}</h5>
+              <h3> happy little tree seedlings</h3>
+              <h5>grown over 10 years</h5>
             </div>
           </div>
           <div className="col-8">
             {data.telemetry && <PowerChart data={data.telemetry} />}
           </div>
         </div>
-        <div className="flex-grid-thirds"></div>
+        {/* <div className="flex-grid-thirds"></div> */}
       </div>
     );
   } else {
