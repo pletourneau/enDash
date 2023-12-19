@@ -101,7 +101,7 @@ const Dashboard = () => {
   };
   // const energyTodayTest = data.summary ? data.summary.energy_today / 1000 : 0;
   const energyLifetimeKWh = data.summary
-    ? Math.floor(data.summary.energy_lifetime) / 1000
+    ? Math.floor(data.summary.energy_lifetime / 1000)
     : 0;
   // const treesSaved = add logic
   const { kWh, timeElapsedInHours } = getTotalPowerAndElapsedTime(

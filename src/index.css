@@ -120,8 +120,8 @@ html, body {
 
 .box {
   box-sizing:border-box;
-  border-style: solid;
-  border-color: #20a0f3;
+  outline-style: solid;
+  outline-color: #20a0f3;
   /* background-color: #F37320; */
   justify-content: center;
   width:100%;
