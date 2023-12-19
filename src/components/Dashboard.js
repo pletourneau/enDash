@@ -70,18 +70,20 @@ const Dashboard = () => {
   }, []);
 
   const getStatusColor = () => {
-    return data && data.meta && data.meta.status === "normal"
+    return telemetryData &&
+      telemetryData.meta &&
+      telemetryData.meta.status === "normal"
       ? "green"
       : "darkred";
   };
 
-  const getTotalPowerAndElapsedTime = (data) => {
+  const getTotalPowerAndElapsedTime = (telemetryData) => {
     let totalPower = 0;
     let startTime = Infinity;
     let endTime = -Infinity;
 
-    if (data && data.intervals) {
-      data.intervals.forEach((interval) => {
+    if (telemetryData && telemetryData.intervals) {
+      telemetryData.intervals.forEach((interval) => {
         totalPower += interval.enwh || 0;
         startTime = Math.min(startTime, interval.end_at || Infinity);
         endTime = Math.max(endTime, interval.end_at || -Infinity);
@@ -103,12 +105,14 @@ const Dashboard = () => {
     ? data.summary.energy_lifetime / 1000
     : 0;
   // const treesSaved = add logic
-  const { kWh, timeElapsedInHours } = getTotalPowerAndElapsedTime(data);
-  console.log("Total kWh", kWh);
-  console.log("Time Elapsed:", timeElapsedInHours, "hours");
+  const { kWh, timeElapsedInHours } = getTotalPowerAndElapsedTime(
+    data.telemetry
+  );
+  // console.log("Total kWh", kWh);
+  // console.log("Time Elapsed:", timeElapsedInHours, "hours");
 
   const getStatusMessage = () => {
-    if (data && data.meta && data.meta.status) {
+    if (telemetryData && telemetryData.meta && telemetry.meta.status) {
       return data.meta.status === "normal"
         ? "Normal"
         : `Alert: ${data.meta.status}`;
@@ -117,9 +121,13 @@ const Dashboard = () => {
   };
   let content;
 
-  if (data === null) {
+  if (data.summary === null && data.telemetry === null) {
     content = <p>Loading...</p>;
-  } else if (data.intervals && data.intervals.length > 0) {
+  } else if (
+    data.telemetry &&
+    data.telemetry.intervals &&
+    data.telemetry.intervals.length > 0
+  ) {
     console.log(data);
 
     content = (
