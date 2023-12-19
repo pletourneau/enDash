@@ -70,9 +70,7 @@ const Dashboard = () => {
   }, []);
 
   const getStatusColor = () => {
-    return telemetryData &&
-      telemetryData.meta &&
-      telemetryData.meta.status === "normal"
+    return data.summary && data.summary.status === "normal"
       ? "green"
       : "darkred";
   };
@@ -112,13 +110,14 @@ const Dashboard = () => {
   // console.log("Time Elapsed:", timeElapsedInHours, "hours");
 
   const getStatusMessage = () => {
-    if (telemetryData && telemetryData.meta && telemetry.meta.status) {
-      return data.meta.status === "normal"
+    if (data.summary && data.summary.status) {
+      return data.summary.status === "normal"
         ? "Normal"
-        : `Alert: ${data.meta.status}`;
+        : `Alert: ${data.summary.status}`;
     }
     return "Status Unavailable";
   };
+
   let content;
 
   if (data.summary === null && data.telemetry === null) {
