@@ -73,10 +73,6 @@ html, body {
   height: 100%;    
 }
 
-.box img {
-  max-width: 80%;
-  height: auto;
-}
 
 /* not functioning */
 
@@ -117,20 +113,29 @@ html, body {
   
   background-color: pink;
 }
-
 .box {
-  box-sizing:content-box;
-  outline-style: solid;
-  outline-color: #20a0f3;
-  /* background-color: #F37320; */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
   justify-content: center;
-  width:100%;
+  box-sizing: border-box; 
+  border: 2px solid #20a0f3; 
+  /* background-color: #F37320;  */
+  padding: 10px; 
+  width: 100%;
 }
 
 .num {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: 0;
+  align-self: center;
 }
+
+
+.box img {
+  max-width: 85%; 
+  height: auto; 
+}
+
 
 .kWhCol {
   width: 100%;
