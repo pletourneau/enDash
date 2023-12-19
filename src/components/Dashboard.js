@@ -98,7 +98,7 @@ const Dashboard = () => {
       timeElapsedInHours,
     };
   };
-
+  const energyTodayTest = data.summary ? data.summary.today / 1000 : 0;
   const energyLifetimeKWh = data.summary
     ? data.summary.energy_lifetime / 1000
     : 0;
@@ -151,6 +151,7 @@ const Dashboard = () => {
 
             <div className="hippie">
               energy produced for ev er{energyLifetimeKWh}
+              {energyTodayTest}
             </div>
           </div>
           <div className="col-8">
