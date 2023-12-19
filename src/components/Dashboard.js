@@ -104,7 +104,7 @@ const Dashboard = () => {
     ? Math.floor(data.summary.energy_lifetime / 1000)
     : 0;
 
-  const happyTrees = energyLifetimeKWh * 0.012;
+  const happyTrees = Math.floor(energyLifetimeKWh * 0.012);
 
   const { kWh, timeElapsedInHours } = getTotalPowerAndElapsedTime(
     data.telemetry
