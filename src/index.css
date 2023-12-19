@@ -64,8 +64,8 @@ html, body {
 }
 
 .col-4 {
-  flex: 0 0 20%; 
-  max-width: 20%;
+  flex: 0 0 30%; 
+  max-width: 30%;
   background-color: aqua;
   flex-direction: column;
   justify-content: center;
@@ -76,8 +76,8 @@ html, body {
 
 
 .col-8 {
-  flex: 0 0 80%; 
-  max-width: 80%;
+  flex: 0 0 70%; 
+  max-width: 70%;
 }
 
 .col-4, .col-8 {
@@ -97,7 +97,7 @@ html, body {
 
 .box {
   display: flex; 
-  flex-direction: column; 
+  flex-direction: row; 
   align-items: center; 
   justify-content: center;
   box-sizing: border-box; 
@@ -116,6 +116,7 @@ html, body {
 .hippie img {
   max-width: 50%; 
   height: auto; 
+  margin: auto;
 }
 
 
