@@ -73,6 +73,11 @@ html, body {
   height: 100%;    
 }
 
+.box img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* not functioning */
 
 /* .hippie {
