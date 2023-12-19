@@ -116,9 +116,13 @@ const Dashboard = () => {
               <p>Status: {getStatusMessage()}</p>
             </div>
             <div className="kWhCol">
-              <p>
+              <div id="box">
+                <h5>Production Today</h5>
+                <h1 id="num">{kWh} kWh</h1>
+              </div>
+              {/* <p>
                 You produced {kWh} kWh in {timeElapsedInHours} hours
-              </p>
+              </p> */}
             </div>
 
             <div className="hippie">
