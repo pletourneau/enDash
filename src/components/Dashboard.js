@@ -153,6 +153,7 @@ const Dashboard = () => {
               <div className="box">
                 <h5>Lifetime Production</h5>
                 <h1 className="num">{energyLifetimeKWh} kWh</h1>
+                // tree image and math to show lifetime prod
               </div>
             </div>
           </div>
