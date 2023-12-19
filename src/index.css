@@ -67,12 +67,17 @@ html, body {
   flex: 0 0 20%; /* 4 out of 12 columns is 1/3 (33.3333%) */
   max-width: 20%;
   background-color: aqua;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  height: 100%;    
 }
 
 .col-4, .statusCol {
   display:block;
   margin-left: auto;
   margin-right: auto;
+  
 }
 .col-8 {
   flex: 0 0 80%; /* 8 out of 12 columns is 2/3 (66.6666%) */
@@ -113,9 +118,3 @@ html, body {
   margin-bottom: auto;
 }
 
-.statusCol {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; 
-  height: 100%;         
-}

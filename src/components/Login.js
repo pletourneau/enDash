@@ -13,6 +13,9 @@ const Login = () => {
     window.location.href = "/dashboard";
     return null;
   }
+
+  //fix refresh token later (error below)
+
   // } else if (now < expRef) {
   //   const refreshToken = localStorage.getItem("refresh_token");
   //   axios

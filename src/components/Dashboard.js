@@ -108,7 +108,6 @@ const Dashboard = () => {
 
     content = (
       <div>
-        {/* <div className="flex-grid">Still need a header paul</div> */}
         <div className="flex-grid">
           <div className="col-4">
             <div className="statusCol">
@@ -124,19 +123,13 @@ const Dashboard = () => {
                 <h5>Production Today</h5>
                 <h1 id="num">{kWh} kWh</h1>
               </div>
-              {/* <p>
-                You produced {kWh} kWh in {timeElapsedInHours} hours
-              </p> */}
             </div>
 
             <div className="hippie">
               How many trees you saved cause you a hippie
             </div>
           </div>
-          <div className="col-8">
-            {/* <h2>Dashboard</h2> */}
-            {data && <PowerChart data={data} />}
-          </div>
+          <div className="col-8">{data && <PowerChart data={data} />}</div>
         </div>
         <div className="flex-grid-thirds"></div>
       </div>
