@@ -112,7 +112,11 @@ const Dashboard = () => {
         <div className="flex-grid">
           <div className="col-4">
             <div className="statusCol">
-              <img src={ico} style={{ color: getStatusColor() }} />
+              <img
+                className="ico"
+                src={ico}
+                style={{ color: getStatusColor() }}
+              />
               <p>Status: {getStatusMessage()}</p>
             </div>
             <div className="kWhCol">
