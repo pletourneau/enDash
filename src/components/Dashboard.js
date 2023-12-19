@@ -38,7 +38,7 @@ const Dashboard = () => {
 
     const fetchData = async () => {
       try {
-        const response = await axios.get("/api/system-summary", {
+        const response = await axios.get("/api/micros-telemetry", {
           headers: {
             Authorization: `Bearer ${storedAccessToken}`,
             key: process.env.REACT_APP_API_KEY,

@@ -114,7 +114,7 @@ app.post("/refresh-token", async (req, res) => {
   }
 });
 // System Summary endpoint
-app.get("/api/system-summary", async (req, res) => {
+app.get("/api/micros-telemetry", async (req, res) => {
   try {
     const authHeader = req.headers.authorization;
     const accessToken = authHeader && authHeader.split(" ")[1];
