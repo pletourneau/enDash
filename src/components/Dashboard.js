@@ -3,6 +3,7 @@ import axios from "axios";
 import PowerChart from "./Chart";
 import "../index.css";
 import ico from "../img/favicon.ico";
+import bob from "../img/BobR.png";
 
 const Dashboard = () => {
   // const [data, setData] = useState(null);
@@ -153,7 +154,7 @@ const Dashboard = () => {
               <div className="box">
                 <h5>Lifetime Production</h5>
                 <h1 className="num">{energyLifetimeKWh} kWh</h1>
-                <img src="../img/BobR.png" />
+                <img src={bob} alt="Bob friggin Ross" />
               </div>
             </div>
           </div>
