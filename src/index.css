@@ -122,7 +122,7 @@ html, body {
   border-style:solid;
   border-color: #20a0f3;
   background-color: #F37320;
-  max-width:100%;
+  min-width:100%;
 }
 
 .num {
