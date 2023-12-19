@@ -101,8 +101,7 @@ html, body {
   align-items: center; 
   justify-content: center;
   box-sizing: border-box; 
-  /* border: 2px solid #20a0f3;  */
-  /* background-color: #F37320;  */
+  
   padding: 10px; 
   width: 100%;
 }
@@ -116,16 +115,34 @@ html, body {
 .hippie img {
   max-width: 50%; 
   height: auto; 
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
 .kWhCol {
   width: 100%;
   justify-content: center;
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
+  box-sizing: border-box; 
+  
+  padding: 10px; 
+  width: 100%;
 }
+
 .prod {
+  width: 100%;
   justify-content: center;
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
+  box-sizing: border-box; 
+  border-style: inset;
+  border: solid;
+  padding: 10px; 
+  width: 100%;
 }
 
 .hippie {
