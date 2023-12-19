@@ -153,7 +153,9 @@ const Dashboard = () => {
               energy produced for ev er{energyLifetimeKWh}
             </div>
           </div>
-          <div className="col-8">{data && <PowerChart data={data} />}</div>
+          <div className="col-8">
+            {data.telemetry && <PowerChart data={data.telemetry} />}
+          </div>
         </div>
         <div className="flex-grid-thirds"></div>
       </div>
