@@ -72,13 +72,16 @@ html, body {
   align-items: center; 
   height: 100%;    
 }
-.hippie {
-  display: flex; /* Make this a flex container */
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center; /* Center children vertically */
-  align-items: center; /* Center children horizontally */
-  width: 100%; /* Take full width of the parent */
-}
+
+/* not functioning */
+
+/* .hippie {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+} */
 
 /* .col-4, .statusCol {
   display:block;
