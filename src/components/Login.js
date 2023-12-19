@@ -12,6 +12,7 @@ const Login = () => {
   if (now < exp) {
     window.location.href = "/dashboard";
     return null;
+  }
   // } else if (now < expRef) {
   //   const refreshToken = localStorage.getItem("refresh_token");
   //   axios
