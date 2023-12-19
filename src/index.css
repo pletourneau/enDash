@@ -123,6 +123,7 @@ html, body {
   border-style: solid;
   border-color: #20a0f3;
   /* background-color: #F37320; */
+  justify-content: center;
   width:100%;
 }
 
