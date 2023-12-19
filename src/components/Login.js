@@ -9,10 +9,10 @@ const Login = () => {
   const expRef = parseInt((localStorage.getItem("expires_at"), 10) + 2629700);
 
   // Redirect to the dashboard if the token hasn't expired yet
-  if (now < exp) {
-    window.location.href = "/dashboard";
-    return null;
-  }
+  // if (now < exp) {
+  //   window.location.href = "/dashboard";
+  //   return null;
+  // }
   // } else if (now < expRef) {
   //   const refreshToken = localStorage.getItem("refresh_token");
   //   axios
