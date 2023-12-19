@@ -74,7 +74,7 @@ html, body {
 }
 
 .box img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
 }
 
@@ -119,7 +119,7 @@ html, body {
 }
 
 .box {
-  box-sizing:border-box;
+  box-sizing:content-box;
   outline-style: solid;
   outline-color: #20a0f3;
   /* background-color: #F37320; */
