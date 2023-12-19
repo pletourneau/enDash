@@ -101,3 +101,14 @@ html, body {
   
   background-color: pink;
 }
+
+#box {
+  border-style:solid;
+  border-color: pink;
+  background-color: aqua;
+}
+
+#num {
+  margin-top: auto;
+  margin-bottom: auto;
+}
