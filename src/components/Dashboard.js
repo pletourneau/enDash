@@ -146,10 +146,14 @@ const Dashboard = () => {
             <div>
               <div className="kWhCol">
                 <div className="box">
-                  <h5>Production Today</h5>
-                  <h3 className="num">{kWh} kWh</h3>
-                  <h5>Lifetime Production</h5>
-                  <h3 className="num">{energyLifetimeKWh} kWh</h3>
+                  <div>
+                    <h5>Production Today</h5>
+                    <h3 className="num">{kWh} kWh</h3>
+                  </div>
+                  <div>
+                    <h5>Lifetime Production</h5>
+                    <h3 className="num">{energyLifetimeKWh} kWh</h3>
+                  </div>
                 </div>
               </div>
             </div>
