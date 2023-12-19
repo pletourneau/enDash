@@ -103,7 +103,9 @@ const Dashboard = () => {
   const energyLifetimeKWh = data.summary
     ? Math.floor(data.summary.energy_lifetime / 1000)
     : 0;
-  // const treesSaved = add logic
+
+  const happyTrees = energyLifetimeKWh * 0.012;
+
   const { kWh, timeElapsedInHours } = getTotalPowerAndElapsedTime(
     data.telemetry
   );
@@ -146,11 +148,11 @@ const Dashboard = () => {
             <div>
               <div className="kWhCol">
                 <div className="box">
-                  <div>
+                  <div className="prod">
                     <h5>Production Today</h5>
                     <h3 className="num">{kWh} kWh</h3>
                   </div>
-                  <div>
+                  <div className="prod">
                     <h5>Lifetime Production</h5>
                     <h3 className="num">{energyLifetimeKWh} kWh</h3>
                   </div>
@@ -158,8 +160,15 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="hippie">
-              <div className="box">
+              <div>
+                <h3>{happyTrees}</h3>
+              </div>
+              <div>
                 <img src={bob} alt="Bob friggin Ross" />
+              </div>
+              <div>
+                <h3>tree seedlings</h3>
+                <p>grown over 10 years</p>
               </div>
             </div>
           </div>
