@@ -105,8 +105,8 @@ html, body {
 
 #box {
   border-style:solid;
-  border-color: pink;
-  background-color: aqua;
+  border-color: #20a0f3;
+  background-color: #F37320;
 }
 
 #num {

@@ -98,7 +98,7 @@ const Dashboard = () => {
       timeElapsedInHours,
     };
   };
-  const energyTodayTest = data.summary ? data.summary.energy_today / 1000 : 0;
+  // const energyTodayTest = data.summary ? data.summary.energy_today / 1000 : 0;
   const energyLifetimeKWh = data.summary
     ? data.summary.energy_lifetime / 1000
     : 0;
@@ -127,7 +127,7 @@ const Dashboard = () => {
     data.telemetry.intervals &&
     data.telemetry.intervals.length > 0
   ) {
-    console.log(data);
+    // console.log(data);
 
     content = (
       <div>
@@ -150,8 +150,10 @@ const Dashboard = () => {
             </div>
 
             <div className="hippie">
-              energy produced for ev er{energyLifetimeKWh}
-              {energyTodayTest}
+              <div id="box">
+                <h5>Lifetime Production</h5>
+                <h1 id="num">{energyLifetimeKWh} kWh</h1>
+              </div>
             </div>
           </div>
           <div className="col-8">
