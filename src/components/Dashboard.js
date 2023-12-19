@@ -98,7 +98,7 @@ const Dashboard = () => {
       timeElapsedInHours,
     };
   };
-  const energyTodayTest = data.summary ? data.summary.today / 1000 : 0;
+  const energyTodayTest = data.summary ? data.summary.energy_today / 1000 : 0;
   const energyLifetimeKWh = data.summary
     ? data.summary.energy_lifetime / 1000
     : 0;
