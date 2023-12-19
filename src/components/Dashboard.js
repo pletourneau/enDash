@@ -143,18 +143,20 @@ const Dashboard = () => {
               />
               <p>Status: {getStatusMessage()}</p>
             </div>
-            <div className="kWhCol">
-              <div className="box">
-                <h5>Production Today</h5>
-                <h1 className="num">{kWh} kWh</h1>
+            <div>
+              <div className="kWhCol">
+                <div className="box">
+                  <h5>Production Today</h5>
+                  <h1 className="num">{kWh} kWh</h1>
+                </div>
               </div>
-            </div>
 
-            <div className="hippie">
-              <div className="box">
-                <h5>Lifetime Production</h5>
-                <h1 className="num">{energyLifetimeKWh} kWh</h1>
-                <img src={bob} alt="Bob friggin Ross" />
+              <div className="hippie">
+                <div className="box">
+                  <h5>Lifetime Production</h5>
+                  <h1 className="num">{energyLifetimeKWh} kWh</h1>
+                  <img src={bob} alt="Bob friggin Ross" />
+                </div>
               </div>
             </div>
           </div>
