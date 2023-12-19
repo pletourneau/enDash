@@ -95,17 +95,6 @@ html, body {
   padding-top: 10%;
 }
 
-.box {
-  display: flex; 
-  flex-direction: row; 
-  align-items: center; 
-  justify-content: center;
-  /* box-sizing: border-box;  */
-  
-  padding: 10px; 
-  width: 100%;
-}
-
 .num {
   margin: 0;
   align-self: center;
@@ -122,28 +111,22 @@ html, body {
 
 
 .kWhCol {
-  width: 100%;
-  justify-content: center;
-  display: flex; 
-  flex-direction: row; 
-  align-items: center;
-  box-sizing: border-box; 
-  
-  padding: 10px; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
   width: 100%;
 }
 
 .prod {
-  width: 100%;
-  justify-content: center;
-  display: flex; 
-  flex-direction: row; 
-  align-items: center;
-  box-sizing: border-box; 
-  border-style: inset;
-  border: solid;
-  padding: 10px; 
-  width: 100%;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;  
+  justify-content: center; 
+  padding: 10px;
+}
+
+.prod:first-child {
+  border-right: none;
 }
 
 .hippie {

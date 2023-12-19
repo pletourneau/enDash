@@ -147,11 +147,11 @@ const Dashboard = () => {
             </div>
 
             <div className="kWhCol">
-              <div className="prod">
+              <div className="prod today">
                 <h5>TODAY</h5>
                 <h3 className="num">{kWh} kWh</h3>
               </div>
-              <div className="prod">
+              <div className="prod lifetime">
                 <h5>LIFETIME</h5>
                 <h3 className="num">{energyLifetimeKWh} kWh</h3>
               </div>
