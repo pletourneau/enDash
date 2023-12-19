@@ -143,16 +143,16 @@ const Dashboard = () => {
               <p>Status: {getStatusMessage()}</p>
             </div>
             <div className="kWhCol">
-              <div id="box">
+              <div className="box">
                 <h5>Production Today</h5>
-                <h1 id="num">{kWh} kWh</h1>
+                <h1 className="num">{kWh} kWh</h1>
               </div>
             </div>
 
             <div className="hippie">
-              <div id="box">
+              <div className="box">
                 <h5>Lifetime Production</h5>
-                <h1 id="num">{energyLifetimeKWh} kWh</h1>
+                <h1 className="num">{energyLifetimeKWh} kWh</h1>
               </div>
             </div>
           </div>
