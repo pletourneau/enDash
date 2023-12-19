@@ -86,6 +86,10 @@ Copyright (c) _2023_ _Paul LeTourneau_
 
 - 4:00pm internet out. googling on my phone to fin out how to join 2 api calls in one request. https://stackoverflow.com/questions/73174642/component-making-two-api-calls-from-single-dispatch
 
+#### Tuesday, 12/19
+
+-1:15 pm finding out how to translate kwh into trees/miles driven https://forterra.org/carbon-calculator-individuals/?gclid=Cj0KCQiAm4WsBhCiARIsAEJIEzXz2RHTLcJ0VLCY4vSRv8lGWMao0vfNMXjadtwKMgSSvR7UpssZHxcaAq33EALw_wcB etAl...
+
 ```
 To start making API requests, the application must be authorized by the system owner. The Auth URL must be sent to the system owner via email or must be embedded in the HO App created by the developer. For the above app, Auth URL is https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=f2a479f3c6067f0d9517cadae7f00b47
 
