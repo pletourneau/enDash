@@ -149,26 +149,26 @@ const Dashboard = () => {
               <div className="kWhCol">
                 <div className="box">
                   <div className="prod">
-                    <h5>Production Today</h5>
+                    <p>PRODUCTION TODAY</p>
                     <h3 className="num">{kWh} kWh</h3>
                   </div>
                   <div className="prod">
-                    <h5>Lifetime Production</h5>
+                    <p>LIFETIME PRODUCTION</p>
                     <h3 className="num">{energyLifetimeKWh} kWh</h3>
                   </div>
                 </div>
               </div>
             </div>
             <div className="hippie">
-              <div>
-                <h3>{happyTrees}</h3>
-              </div>
+              <div></div>
               <div>
                 <img src={bob} alt="Bob friggin Ross" />
               </div>
               <div>
-                <h3>tree seedlings</h3>
-                <p>grown over 10 years</p>
+                <h5>This is the equivalent of</h5>
+                <h3>{happyTrees}</h3>
+                <h3> happy little tree seedlings</h3>
+                <h5>grown over 10 years</h5>
               </div>
             </div>
           </div>
