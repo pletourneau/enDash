@@ -115,6 +115,7 @@ const Dashboard = () => {
                 className="ico"
                 src={ico}
                 style={{ color: getStatusColor() }}
+                alt="Status Icon Normal"
               />
               <p>Status: {getStatusMessage()}</p>
             </div>

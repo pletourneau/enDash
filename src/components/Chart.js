@@ -30,7 +30,10 @@ const PowerChart = ({ data }) => {
     labels: filteredIntervals.map((interval) => {
       const date = new Date(interval.end_at * 1000);
 
-      return `${date.getHours()}:${date.getMinutes()}`;
+      const hours = date.getHours();
+      const minutes = String(date.getMinutes()).padStart(2, "0");
+
+      return `${hours}:${minutes}`;
     }),
     datasets: [
       {

@@ -90,17 +90,13 @@ html, body {
   
 }
 
-
-
-
-
-/* .statusCol {
-  flex: 1;
+.statusCol {
+  display: flex; /* Make this a flex container */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically */
+  align-items: center; /* Center children horizontally */
+  width: 100%; /* Take full width of the parent */
 }
-
-.kWhCol {
-  flex: 2;
-} */
 
 .row-8 {
   
