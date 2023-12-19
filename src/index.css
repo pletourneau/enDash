@@ -121,12 +121,16 @@ html, body {
 .box {
   border-style:solid;
   border-color: #20a0f3;
-  background-color: #F37320;
-  min-width:100%;
+  /* background-color: #F37320; */
+  width:100%;
 }
 
 .num {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.kWhCol {
+  width: 100%;
 }
 
