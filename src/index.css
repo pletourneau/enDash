@@ -117,7 +117,7 @@ html, body {
   border-style:solid;
   border-color: #20a0f3;
   background-color: #F37320;
-  width: 100;
+  width:100%;
 }
 
 .num {
