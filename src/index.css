@@ -112,3 +112,8 @@ html, body {
   margin-top: auto;
   margin-bottom: auto;
 }
+
+.status-col {
+  margin-left: auto;
+  margin-right: auto;
+}
