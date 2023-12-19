@@ -90,7 +90,7 @@ html, body {
   
 } */
 .col-8 {
-  flex: 0 0 80%; /* 8 out of 12 columns is 2/3 (66.6666%) */
+  flex: 0 0 80%; 
   max-width: 80%;
 }
 
@@ -101,11 +101,11 @@ html, body {
 }
 
 .statusCol {
-  display: flex; /* Make this a flex container */
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center; /* Center children vertically */
-  align-items: center; /* Center children horizontally */
-  width: 100%; /* Take full width of the parent */
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
 }
 
 .row-8 {
