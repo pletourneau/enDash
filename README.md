@@ -21,7 +21,7 @@
 
 ## Description
 
-_Solar Dashboard for owners of residential solar that use compatible Enphase Energy microinverters. _
+_Solar Dashboard for owners of residential solar systems that use compatible Enphase Energy microinverters. Dashboard was designed with free version of API and can only access system summary and microinverter telemetry data. With paid subscription or installer partner plan many more options, including live data, are available. Current outputs display as a graph with the last 288, five minute, intervals, filtering only non-zero intervals for display. There is a status section that shows the status message from the API call. It also converts lifetime production into kWh and total trees grown for 10 years from seedlings. And has a picture of Bob Ross._
 
 ## Setup/Installation Requirements
 
