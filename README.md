@@ -21,11 +21,11 @@
 
 ## Description
 
-_Lorem ipsum milkshake brings me to the yard because I want ice cream_
+_Solar Dashboard for owners of residential solar that use compatible Enphase Energy microinverters. _
 
 ## Setup/Installation Requirements
 
-- _$ clone down project from github (https://github.com/pletourneau/enDash)_
+- _$ clone project from github (https://github.com/pletourneau/enDash)_
 - _$ cd enDash_
 - _$ npm install_
 
@@ -45,7 +45,8 @@ _https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator#results_
 
 ## Known Bugs
 
-- _please reach out as bugs are found! thepaulletourneau@gmail.com_
+- _Refresh token is not currently used. Code is outlined, but not correct_
+- _System ID is currently hard coded as an env variable. For production releases that should be an input_
 
 ## License
 
@@ -104,13 +105,3 @@ Copyright (c) _2023_ _Paul LeTourneau_
   https://www.npmjs.com/package/react-share
   https://www.makeuseof.com/what-is-api-authentication/ (odd address... about social share features)
   https://www.youtube.com/watch?v=_vUd_ex6wBw
-
-```
-To start making API requests, the application must be authorized by the system owner. The Auth URL must be sent to the system owner via email or must be embedded in the HO App created by the developer. For the above app, Auth URL is https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=f2a479f3c6067f0d9517cadae7f00b47
-
-4. Append Auth URL with redirect_uri
-
-The Auth URL must be appended with redirect_uri as a query parameter and after HO approves, the authorization code is sent to this redirect_uri as a query parameter. You can provide your own Web API or webhook URL in the redirect_uri or you can use https://api.enphaseenergy.com/oauth/redirect_uri as a default redirect_uri.
-
-If the default redirect uri is used, the final Auth URL must be similar to For the above app, Auth URL is https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=f2a479f3c6067f0d9517cadae7f00b47&redirect_uri=https://api.enphaseenergy.com/oauth/redirect_uri
-```
