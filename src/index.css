@@ -115,7 +115,7 @@ html, body {
   flex-direction: row; 
   align-items: center; 
   width: 100%;
-  max-height: 25vh;
+  max-height: 15vh;
 }
 
 .prod {
@@ -150,7 +150,7 @@ html, body {
 .hippie img {
   display: block;
   max-width: 50%; 
-  height: auto; 
+  height:max-content; 
  
 }
 
