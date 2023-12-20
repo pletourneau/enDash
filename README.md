@@ -94,6 +94,13 @@ Copyright (c) _2023_ _Paul LeTourneau_
 
 -1:15 pm finding out how to translate kwh into trees/miles driven https://forterra.org/carbon-calculator-individuals/?gclid=Cj0KCQiAm4WsBhCiARIsAEJIEzXz2RHTLcJ0VLCY4vSRv8lGWMao0vfNMXjadtwKMgSSvR7UpssZHxcaAq33EALw_wcB etAl...
 
+## Wednesday, 12/20
+
+- 8:00 am Searching for social share options.
+  https://www.npmjs.com/package/react-share
+  https://www.makeuseof.com/what-is-api-authentication/ (odd address... about social share features)
+  https://www.youtube.com/watch?v=_vUd_ex6wBw
+
 ```
 To start making API requests, the application must be authorized by the system owner. The Auth URL must be sent to the system owner via email or must be embedded in the HO App created by the developer. For the above app, Auth URL is https://api.enphaseenergy.com/oauth/authorize?response_type=code&client_id=f2a479f3c6067f0d9517cadae7f00b47
 
