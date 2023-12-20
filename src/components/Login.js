@@ -46,11 +46,11 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="loginBox">
       <h1>Welcome to enDash</h1>
       <h2>Residential Solar Dashboard</h2>
       <h2>Powered by Enphase microinverters</h2>
-      <button onClick={handleLogin}>Login with OAuth</button>
+      <button onClick={handleLogin}>Login with Enphase</button>
     </div>
   );
 };
