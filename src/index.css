@@ -53,6 +53,7 @@ html, body {
 .flex-grid {
   display: flex;
   background-color: #fff6e5;
+  height:100vh;
 }
 
 .flex-grid .col {
@@ -70,9 +71,9 @@ html, body {
   background-color: rgb(232, 232, 232);
   background-size: 100%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center; 
-  height: 100%;    
+  height: 100vh;    
 }
 
 
