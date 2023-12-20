@@ -152,6 +152,7 @@ html, body {
   display: block;
   max-width: 50%; 
   height:max-content; 
+  margin-top: 0;
  
 }
 
