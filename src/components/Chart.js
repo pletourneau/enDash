@@ -39,10 +39,10 @@ const PowerChart = ({ data }) => {
       {
         label: "Watt Hours Produced",
         data: filteredIntervals.map((interval) => interval.enwh),
-        // backgroundColor: "rgba(54, 162, 235, 0.6)",
-        backgroundColor: "#4caf50",
-        // borderColor: "rgba(54, 162, 235, 1)",
-        borderColor: "#4d6b53",
+
+        backgroundColor: "#f37220",
+
+        borderColor: "#5f6062",
         borderWidth: 1,
       },
     ],

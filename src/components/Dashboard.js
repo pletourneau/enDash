@@ -158,14 +158,11 @@ const Dashboard = () => {
             </div>
 
             <div className="hippie">
-              <h3>
-                This is the equivalent of {happyTrees} happy little tree
-                seedlings grown over 10 years
-              </h3>
               <img src={bob} alt="Bob friggin Ross" />
-              {/* <h5>This is the equivalent of {happyTrees}</h5>
-              <h3> happy little tree seedlings</h3>
-              <h5>grown over 10 years</h5> */}
+              <h3>
+                Your lifetime production is the equivalent of {happyTrees} happy
+                little tree seedlings grown over 10 years
+              </h3>
             </div>
           </div>
           <div className="col-8">
