@@ -3,7 +3,7 @@ import axios from "axios";
 import PowerChart from "./Chart";
 import "../index.css";
 import ico from "../img/favicon.ico";
-import bob from "../img/bob.png";
+import bob from "../img/BobR.png";
 
 const Dashboard = () => {
   // const [data, setData] = useState(null);
