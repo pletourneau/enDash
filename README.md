@@ -17,6 +17,7 @@
 - _OAuth 2.0_
 - _Enphase API v4_
 - _Express_
+- _Axios_
 
 ## Description
 

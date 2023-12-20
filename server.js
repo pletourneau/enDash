@@ -15,7 +15,8 @@ app.use(cors());
 
 // In your Express server file
 app.get("/initiate-oauth", (req, res) => {
-  const clientId = "192ef4c2b2f65ae0e67eb93eb402e430";
+  // const clientId = "192ef4c2b2f65ae0e67eb93eb402e430";
+  const clientId = process.env.REACT_APP_CLIENT_ID;
   const redirectUri =
     "https://endashpl-9db148c0dbc8.herokuapp.com/oauth/redirect";
 
