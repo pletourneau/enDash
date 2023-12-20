@@ -153,9 +153,10 @@ html, body {
   text-align: center;
   padding: 1rem;
   max-width: 50%;
-  border: .6rem solid #f37220;
-  border-radius: 10%;
+  border: .3rem solid #f37220;
+  border-radius: 5%;
   color: #5f6062;
+  background-color: rgb(232, 232, 232);
 }
 
 .loginDiv {
@@ -163,5 +164,5 @@ html, body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: lightgray;
+  background-color: #FFF6e5;
 }

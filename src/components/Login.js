@@ -51,7 +51,7 @@ const Login = () => {
       <div className="loginBox">
         <h1>Welcome to enDash</h1>
         <h2>Residential Solar Dashboard</h2>
-        <h2>Powered by Enphase microinverters</h2>
+        <p>powered by Enphase microinverters</p>
         <button onClick={handleLogin}>Login with Enphase</button>
       </div>
     </div>
