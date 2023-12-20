@@ -25,10 +25,17 @@ _Lorem ipsum milkshake brings me to the yard because I want ice cream_
 
 ## Setup/Installation Requirements
 
-- _$ git clone (INSERT MORE HERE)_
-- _$ cd (INSERT MORE HERE)_
+- _$ clone down project from github (https://github.com/pletourneau/enDash)_
+- _$ cd enDash_
 - _$ npm install_
-- _$ npm run build_
+
+- _register app with enphase (https://developer-v4.enphase.com/admin/applications) to get API Key, Client ID, Client Secret to use below in environment variables_
+- _get System ID from residential solar system owner with compatible Enphase Microinverters_
+- _set up account on Heroku (or host of your choosing) https://devcenter.heroku.com/articles/heroku-cli_
+- _$ heroku create_
+- _set environment variables on Heroku in dashboard OR heroku config $ heroku config: set varName=value_
+- \_you will need values for
+- _$ npm start_
 - _$ npm run start (see note)_
 - _GET API ACCOUNT YADA YADA_
 
