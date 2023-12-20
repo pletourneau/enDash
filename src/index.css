@@ -156,7 +156,8 @@ html, body {
   border: .3rem solid #f37220;
   border-radius: 5%;
   color: #5f6062;
-  background-color: rgb(232, 232, 232);
+  /* background-color: rgb(232, 232, 232); */
+  background-color: #fff6e5;
 }
 
 .loginDiv {
@@ -164,5 +165,6 @@ html, body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #FFF6e5;
+  /* background-color: #FFF6e5; */
+  background-color: rgb(232, 232, 232);
 }
