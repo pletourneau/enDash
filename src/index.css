@@ -152,7 +152,11 @@ html, body {
 .loginBox {
   display: block;
   max-width: 50%;
-  border: 3rem solid #f37220;
+  border: 1rem solid #f37220;
   border-radius: 25% 10%;
-  align-items:center;
+}
+
+.loginDiv {
+  align-items: center;
+  justify-content: center;
 }
