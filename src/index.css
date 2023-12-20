@@ -71,7 +71,7 @@ html, body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center; 
-  padding: 20px;
+  /* padding: 20px; */
   /* height: 100%;     */
 }
 
@@ -142,7 +142,7 @@ html, body {
   /* align-items: center; 
   justify-content: center; */
   text-align: center;
-  overflow: hidden;
+  overflow:auto;
   width: 100%;
 }
 
