@@ -67,7 +67,7 @@ html, body {
   flex: 0 0 30%; 
   max-width: 30%;
   background-color: rgb(232, 232, 232);
-  background-size: cover;
+  background-size: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center; 
