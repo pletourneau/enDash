@@ -76,7 +76,13 @@ html, body {
   height: 100vh;    
 }
 
-
+.kWhCol, .hippie {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .col-8 {
   flex: 0 0 70%; 
