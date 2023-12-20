@@ -87,6 +87,7 @@ html, body {
 .col-8 {
   flex: 0 0 70%; 
   max-width: 70%;
+  justify-content: center;
 }
 
 .col-4, .col-8 {
