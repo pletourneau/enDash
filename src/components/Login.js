@@ -36,10 +36,9 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      // Make a request to the server to initiate the OAuth flow
       const response = await axios.get("/initiate-oauth");
       console.log(response);
-      // Redirect the user to the authorization URL provided by the server
+
       window.location.href = response.data.authorizationUrl;
     } catch (error) {
       console.error("Error initiating OAuth flow:", error);
@@ -48,6 +47,9 @@ const Login = () => {
 
   return (
     <div>
+      <h1>Welcome to enDash</h1>
+      <h2>Residential Solar Dashboard</h2>
+      <h2>Powered by Enphase microinverters</h2>
       <button onClick={handleLogin}>Login with OAuth</button>
     </div>
   );
