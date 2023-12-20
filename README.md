@@ -30,18 +30,14 @@ _Lorem ipsum milkshake brings me to the yard because I want ice cream_
 - _$ npm install_
 
 - _register app with enphase (https://developer-v4.enphase.com/admin/applications) to get API Key, Client ID, Client Secret to use below in environment variables_
+- _encode the Client ID and Client Secret into base64 (following instructions in step 8 here https://developer-v4.enphase.com/docs/quickstart.html) at this website https://www.base64encode.org/ and save the result as an environment variable_
 - _get System ID from residential solar system owner with compatible Enphase Microinverters_
 - _set up account on Heroku (or host of your choosing) https://devcenter.heroku.com/articles/heroku-cli_
 - _$ heroku create_
 - _set environment variables on Heroku in dashboard OR heroku config $ heroku config: set varName=value_
-- \_you will need values for
+- _$ git push heroku main_
+- _$ heroku open_
 - _$ npm start_
-- _$ npm run start (see note)_
-- _GET API ACCOUNT YADA YADA_
-
-_{While in the root directory of the project, run `$npm install`.}_
-
-_{If you would like to start a server when UI is added, `$ npm run start`, will open a server in your browser.}_
 
 ## Source for Production Estimates
 
