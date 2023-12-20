@@ -21,7 +21,7 @@
 
 ## Description
 
-_Solar Dashboard for owners of residential solar systems that use compatible Enphase Energy microinverters. Dashboard was designed with free version of API and can only access system summary and microinverter telemetry data. With paid subscription or installer partner plan many more options, including live data, are available. Current outputs display as a graph with the last 288, five minute, intervals, filtering only non-zero intervals for display. There is a status section that shows the status message from the API call. It also converts lifetime production into kWh and total trees grown for 10 years from seedlings. And has a picture of Bob Ross._
+_Solar Dashboard for owners of residential solar systems that use compatible Enphase Energy microinverters. Dashboard was designed with free version of API and can only access system summary and microinverter telemetry data. With paid subscription or installer partner plan many more options, including live data, are available. Current outputs display as a graph with the last 288, five minute, intervals, filtering only non-zero intervals for display. There is a status section that shows the status message from the API call. It also converts lifetime production into kWh and total trees grown for 10 years from seedlings. And has a picture of Bob Ross. Other comedic output can be added to keep user engagement up. See examples near the bottom._
 
 ## Setup/Installation Requirements
 
@@ -47,6 +47,15 @@ _https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator#results_
 
 - _Refresh token is not currently used. Code is outlined, but not correct_
 - _System ID is currently hard coded as an env variable. For production releases that should be an input_
+
+## Example comedic output pictures
+
+- _These are pictures of sample output to keep users engaged with app_
+
+  <img src="./src/img/Status Snoop n Willie.jpg">
+  <img src="./src/img/Status Bob.jpg">
+  <img src="./src/img/Status Santa.jpg">
+  <img src="./src/img/Status Talladega.jpg">
 
 ## License
 
