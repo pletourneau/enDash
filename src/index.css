@@ -153,7 +153,6 @@ html, body {
   display: block;
   max-width: 50%;
   border: 3rem solid #f37220;
-  /* border-color: #f37220; */
   border-radius: 25% 10%;
   align-items:center;
 }
