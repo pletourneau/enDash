@@ -96,8 +96,9 @@ html, body {
 }
 
 .num {
-  margin: 0;
-  align-self: center;
+  margin-top: 5px;
+  text-align: center;
+  width: 100%;
 }
 
 
@@ -121,12 +122,18 @@ html, body {
   display: flex;
   flex-direction: column;  
   align-items: center;  
-  justify-content: center; 
-  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .prod:first-child {
   border-right: none;
+}
+
+.prod h5 {
+  margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 .hippie {
