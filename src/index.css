@@ -127,53 +127,22 @@ html, body {
   width: 100%;
 }
 
-/* .hippie {
+.hippie {
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   justify-content: center;
   box-sizing: border-box; 
- border: 2px solid #20a0f3;  
-   background-color: #F37320;  
+ /* border: 2px solid #20a0f3;  
+   background-color: #F37320;   */
   padding: 10px; 
   width: 100%;
 }
- 
-*/
-
-.hippie {
-  position: relative;
-  border-radius: 50%;
-  width: 250px;
-  height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-}
 
 .hippie img {
-  width: 50%;
-  height: auto;
-  z-index: 1;
-}
-
-.hippie h3 {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-/* .hippie img {
   display: block;
   max-width: 50%; 
   height: auto; 
   margin-left: auto;
   margin-right: auto;
-} */
+}
