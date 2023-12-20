@@ -165,12 +165,12 @@ const Dashboard = () => {
               </h3>
             </div>
           </div>
-          <div className="col-8">
-            {data.telemetry && <PowerChart data={data.telemetry} />}
-          </div>
           <a href="mailto:someone@example.com?subject=Mail from Our Site">
             <div>Click here to send an email to our service team!</div>
           </a>
+          <div className="col-8">
+            {data.telemetry && <PowerChart data={data.telemetry} />}
+          </div>
         </div>
       </div>
     );
