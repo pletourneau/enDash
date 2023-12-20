@@ -150,13 +150,16 @@ html, body {
 }
 
 .loginBox {
-  display: block;
+  text-align: center;
+  padding: 1rem;
   max-width: 50%;
-  border: 1rem solid #f37220;
-  border-radius: 25% 10%;
+  border: .6rem solid #f37220;
+  border-radius: 10%;
 }
 
 .loginDiv {
+  display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
