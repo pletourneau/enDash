@@ -35,6 +35,10 @@ _{While in the root directory of the project, run `$npm install`.}_
 
 _{If you would like to start a server when UI is added, `$ npm run start`, will open a server in your browser.}_
 
+## Source for Production Estimates
+
+_https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator#results_
+
 ## Known Bugs
 
 - _please reach out as bugs are found! thepaulletourneau@gmail.com_

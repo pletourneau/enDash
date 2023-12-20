@@ -102,15 +102,6 @@ html, body {
 }
 
 
-.hippie img {
-  display: block;
-  max-width: 50%; 
-  height: auto; 
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
 .kWhCol {
   display: flex;
   flex-direction: row; 
@@ -136,14 +127,36 @@ html, body {
   width: 100%;
 }
 
-.hippie {
+/* .hippie {
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   justify-content: center;
   box-sizing: border-box; 
-  /* border: 2px solid #20a0f3;  */
-  /* background-color: #F37320;  */
+ border: 2px solid #20a0f3;  
+   background-color: #F37320;  
   padding: 10px; 
   width: 100%;
+}
+ 
+*/
+
+.hippie {
+  position: relative;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.hippie img {
+  display: block;
+  max-width: 50%; 
+  height: auto; 
+  margin-left: auto;
+  margin-right: auto;
 }
