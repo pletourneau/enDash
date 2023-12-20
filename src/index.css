@@ -52,6 +52,7 @@ html, body {
 
 .flex-grid {
   display: flex;
+  background-color: #fff6e5;
 }
 
 .flex-grid .col {
