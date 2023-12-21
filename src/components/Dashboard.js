@@ -170,7 +170,7 @@ const Dashboard = () => {
             <div>{data.telemetry && <PowerChart data={data.telemetry} />}</div>
             <div className="contact row">
               <a href="mailto:someone@example.com?subject=Mail from Our Site">
-                <div>Click here to send an email to our service team!</div>
+                <div>Click here to send an email to our service team</div>
               </a>
               <a href="google.com">
                 <div>Click here to refer a friend</div>
