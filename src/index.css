@@ -179,8 +179,8 @@ html, body {
 
 #refBut {
   padding: 10px 20px;
-  background-color: #5f6062;
-  color: white;
+  background-color: #46b34e;
+  /* color: white; */
   text-align: center;
   border-radius: 5px;
   cursor: pointer;

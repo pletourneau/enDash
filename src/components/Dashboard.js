@@ -163,15 +163,6 @@ const Dashboard = () => {
                 Your lifetime production is the equivalent of {happyTrees} happy
                 little tree seedlings grown over 10 years
               </h3>
-            </div>
-          </div>
-
-          <div className="col-8">
-            <div>{data.telemetry && <PowerChart data={data.telemetry} />}</div>
-            <div className="contact row">
-              <a href="mailto:someone@example.com?subject=Mail from Our Site">
-                <div>Click here to send an email to our service team</div>
-              </a>
               <div id="refBut">
                 <a
                   href="https://www.google.com"
@@ -182,6 +173,15 @@ const Dashboard = () => {
                   <div>Refer a Friend</div>
                 </a>
               </div>
+            </div>
+          </div>
+
+          <div className="col-8">
+            <div>{data.telemetry && <PowerChart data={data.telemetry} />}</div>
+            <div className="contact row">
+              <a href="mailto:someone@example.com?subject=Mail from Our Site">
+                <div>Click here to send an email to our service team</div>
+              </a>
             </div>
           </div>
         </div>
