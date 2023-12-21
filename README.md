@@ -18,6 +18,7 @@
 - _Enphase API v4_
 - _Express_
 - _Axios_
+- _React_Chart_JS_2_
 
 ## Description
 
