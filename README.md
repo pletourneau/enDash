@@ -33,6 +33,9 @@ _Solar Dashboard for owners of residential solar systems that use compatible Enp
 - _encode the Client ID and Client Secret into base64 (following instructions in step 8 here https://developer-v4.enphase.com/docs/quickstart.html) at this website https://www.base64encode.org/ and save the result as an environment variable_
 - _get System ID from residential solar system owner with compatible Enphase Microinverters_
 - _set up account on Heroku (or host of your choosing) https://devcenter.heroku.com/articles/heroku-cli_
+
+  **_NOTE:_** This app will not work locally without significant changes. The API will not exchange the code for a token with a "localhost" uri. If you decide to try this route you will need to use Enphase's default URI and pop it out in a different window and have the user copy and paste the code into another page you will need to create.
+
 - _$ heroku create_
 - _set environment variables on Heroku in dashboard OR heroku config $ heroku config: set varName=value_
 - _$ git push heroku main_
