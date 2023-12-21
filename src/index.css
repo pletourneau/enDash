@@ -191,3 +191,10 @@ html, body {
   color: #fff6e5; 
   text-decoration: none;
 }
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
