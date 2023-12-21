@@ -176,3 +176,13 @@ html, body {
   /* background-color: #FFF6e5; */
   background-color: #5f6062;
 }
+
+# refBut {
+  padding: '10px 20px',
+  backgroundColor: '#007bff',
+  color: 'white',
+  textAlign: 'center',
+  borderRadius: '5px',
+  cursor: 'pointer',
+  display: 'inline-block'
+}

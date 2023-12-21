@@ -172,9 +172,16 @@ const Dashboard = () => {
               <a href="mailto:someone@example.com?subject=Mail from Our Site">
                 <div>Click here to send an email to our service team</div>
               </a>
-              <a href="google.com">
-                <div>Click here to refer a friend</div>
-              </a>
+              <div id="refBut">
+                <a
+                  href="https://www.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <div>Refer a Friend</div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
