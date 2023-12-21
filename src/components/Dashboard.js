@@ -6,7 +6,6 @@ import ico from "../img/favicon.ico";
 import bob from "../img/BobR.png";
 
 const Dashboard = () => {
-  // const [data, setData] = useState(null);
   const [data, setData] = useState({ summary: null, telemetry: null });
 
   const getTokensFromURL = () => {
