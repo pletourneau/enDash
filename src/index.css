@@ -179,10 +179,15 @@ html, body {
 
 #refBut {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #5f6062;
   color: white;
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
   display: inline-block;
+}
+
+#refBut a {
+  color: #fff6e5; 
+  text-decoration: none;
 }
