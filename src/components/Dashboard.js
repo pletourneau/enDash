@@ -179,12 +179,11 @@ const Dashboard = () => {
           <div className="col-8">
             <div>{data.telemetry && <PowerChart data={data.telemetry} />}</div>
             <div>
-              
-                <div className="email">
+              <div className="email">
                 <a href="mailto:someone@example.com?subject=Mail from Our Site">
                   Click here to send an email to our service team
-                </div>
-              </a>
+                </a>
+              </div>
             </div>
           </div>
         </div>
