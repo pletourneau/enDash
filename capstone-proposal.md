@@ -17,7 +17,7 @@
 <li> Company branding will be sleek and small, yet prominent</li>
 <li> User will have low friction ways to contact company via email for service/troubleshooting and referrals</li>
 <li> Tokens will be stored SECURELY on the server side using express</li>
-<li> No error messages will be given for an inverter not responding while sun is down</li>
+<li> Error messages will be given for an inverter not responding while sun is down</li>
 </ul>
 
 ### Project Planning MVP
