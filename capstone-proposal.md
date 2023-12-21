@@ -1,4 +1,4 @@
-# Name of Project: Enphase Dashboard by Paul LeTourneau
+# Enphase Dashboard by Paul LeTourneau
 
 ## Project's Purpose or Goal: This dashboard will provide easy to information about a solar array with Enphase microinverters using the Enlighten API v4 (https://developer-v4.enphase.com/).
 
